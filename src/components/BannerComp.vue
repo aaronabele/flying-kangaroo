@@ -40,20 +40,21 @@ export default {};
   left: 30px;
   color: #fff;
   font-family: "Montserrat Alternates", sans-serif;
-  font-size: 1.4rem;
+  font-size: 36px;
 }
 
 .banner-text-description {
   position: absolute;
-  top: 60px;
+  top: 80px;
   left: 30px;
   color: #fff;
   font-family: "Montserrat Alternates", sans-serif;
+  font-size: 18px;
 }
 
 .banner-button {
   position: absolute;
-  top: 100px;
+  top: 120px;
   left: 30px;
   color: black;
   font-family: "Montserrat Alternates", sans-serif;
@@ -61,5 +62,6 @@ export default {};
   border-radius: 15px;
   padding: 0.5rem 1rem;
   background-color: #fff;
+  font-size: 18px;
 }
 </style>

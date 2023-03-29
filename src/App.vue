@@ -33,6 +33,6 @@ body {
 }
 
 .banner-comp-styling {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 </style>
