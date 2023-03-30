@@ -10,8 +10,6 @@
       </li>
     </ul>
   </div>
-  <button class="prev">&#10148;</button>
-  <button class="next">&#10148;</button>
 </template>
 
 <script>
