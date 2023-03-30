@@ -131,6 +131,7 @@ nav a.router-link-exact-active {
   font-family: "Kaushan Script", cursive;
   font-weight: bold;
   text-transform: lowercase;
-  font-size: 16px;
+  font-size: 20px;
+  padding-bottom: 0.5rem;
 }
 </style>
