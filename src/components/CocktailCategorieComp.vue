@@ -90,18 +90,19 @@ export default {
 
 .cocktail-category-text {
   position: absolute;
-  left: 200px;
+  left: 40px;
   bottom: 250px;
   width: 15ch;
   font-size: 48px;
   font-family: "Montserrat Alternates", sans-serif;
   color: white;
+  text-align: right;
 }
 
 .cocktail-category-router-link {
   font-family: "Montserrat Alternates", sans-serif;
   position: absolute;
-  left: 200px;
+  left: 370px;
   bottom: 170px;
   border-radius: 15px;
   padding: 1rem 1.5rem;

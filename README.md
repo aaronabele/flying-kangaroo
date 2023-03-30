@@ -56,3 +56,9 @@ brand.mastercard.com/brandcenter/other-marks.html
 <a target="_blank" href="https://icons8.com/icon/62925/linkedin-im-kreis">LinkedIn im Kreis</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 Foto von <a href="https://unsplash.com/@kaufmann_mercantile?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kaufmann Mercantile</a> auf <a href="https://unsplash.com/de/fotos/Bf5B06xmA3Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+<a href="https://www.flaticon.com/free-icons/heart" title="heart icons">Heart icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/growing" title="growing icons">Growing icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/world" title="world icons">World icons created by turkkub - Flaticon</a>
