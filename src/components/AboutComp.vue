@@ -118,35 +118,4 @@ export default {
   background-size: cover;
   background-position: 50% 70%;
 }
-
-.banner-text-header {
-  position: absolute;
-  top: 30px;
-  left: 120px;
-  color: #fff;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 36px;
-}
-
-.banner-text-description {
-  position: absolute;
-  top: 80px;
-  left: 120px;
-  color: #fff;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 18px;
-}
-
-.banner-button {
-  position: absolute;
-  top: 120px;
-  left: 120px;
-  color: black;
-  font-family: "Montserrat Alternates", sans-serif;
-  border: none;
-  border-radius: 15px;
-  padding: 0.5rem 1rem;
-  background-color: #fff;
-  font-size: 18px;
-}
 </style>
