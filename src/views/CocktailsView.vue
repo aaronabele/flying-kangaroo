@@ -1,5 +1,15 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <FilterCocktailsComp />
 </template>
+
+<script>
+import FilterCocktailsComp from "@/components/FilterCocktailsComp.vue";
+
+export default {
+  components: {
+    FilterCocktailsComp,
+  },
+};
+</script>
+
+<style></style>
