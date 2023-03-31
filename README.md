@@ -62,3 +62,9 @@ Foto von <a href="https://unsplash.com/@kaufmann_mercantile?utm_source=unsplash&
 <a href="https://www.flaticon.com/free-icons/growing" title="growing icons">Growing icons created by Freepik - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/world" title="world icons">World icons created by turkkub - Flaticon</a>
+
+Foto von <a href="https://unsplash.com/@austindistel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Austin Distel</a> auf <a href="https://unsplash.com/de/fotos/IUitg35kAH0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Foto von <a href="https://unsplash.com/ko/@novokayn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pylyp Sukhenko</a> auf <a href="https://unsplash.com/de/fotos/SrsIBiJPpxs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Foto von <a href="https://unsplash.com/@brookecagle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brooke Cagle</a> auf <a href="https://unsplash.com/de/fotos/qpirSKdJDUw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
