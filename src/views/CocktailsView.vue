@@ -1,13 +1,12 @@
 <template>
-  <FilterCocktailsComp />
+  <CocktailsComp />
 </template>
 
 <script>
-import FilterCocktailsComp from "@/components/FilterCocktailsComp.vue";
-
+import CocktailsComp from "@/components/CocktailsComp.vue";
 export default {
   components: {
-    FilterCocktailsComp,
+    CocktailsComp,
   },
 };
 </script>
