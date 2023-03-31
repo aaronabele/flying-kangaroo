@@ -155,7 +155,7 @@ export default {};
 }
 
 .footer-ul-li-img-styling {
-  width: 24px;
+  width: 28px;
   height: auto;
 }
 

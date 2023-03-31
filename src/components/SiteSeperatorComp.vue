@@ -1,16 +1,18 @@
 <template>
   <div class="site-seperator-wrapper">
     <div class="site-seperator-positioning">
-      <h2 class="site-seperator-header">Kangaroo's Zero Waste Cocktails</h2>
-      <p class="site-seperator-text">
-        Mixtape hella blackbird spyplane, DIY sriracha microdosing knausgaard
-        aesthetic messenger bag shaman. Iceland you probably haven't heard of
-        them next level poke, vexillologist gluten-free fanny pack.
-      </p>
-      <div class="site-seperator-raute-positioning">
-        <div class="site-seperator-raute1"></div>
-        <div class="site-seperator-raute2"></div>
-      </div>
+      <slot name="siteseperatr-slot">
+        <h2 class="site-seperator-header">Kangaroo's Zero Waste Cocktails</h2>
+        <p class="site-seperator-text">
+          Mixtape hella blackbird spyplane, DIY sriracha microdosing knausgaard
+          aesthetic messenger bag shaman. Iceland you probably haven't heard of
+          them next level poke, vexillologist gluten-free fanny pack.
+        </p>
+        <div class="site-seperator-raute-positioning">
+          <div class="site-seperator-raute1"></div>
+          <div class="site-seperator-raute2"></div>
+        </div>
+      </slot>
     </div>
   </div>
 </template>
