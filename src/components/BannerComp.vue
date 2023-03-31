@@ -33,7 +33,7 @@ export default {};
   width: 100%;
   background-repeat: none;
   background-size: cover;
-  background-position: 0px 800px;
+  background-position: 50% 75%;
 }
 
 .banner-text-header {

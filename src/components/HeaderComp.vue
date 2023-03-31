@@ -9,7 +9,9 @@
       </div>
       <ul class="header-comp-navigation-ul">
         <div class="header-comp-navigation-positioning">
-          <li class="header-comp-navigation-ul-li-company">flying-kangaroo</li>
+          <li class="header-comp-navigation-ul-li-company">
+            <router-link to="/">flying-kangaroo</router-link>
+          </li>
           <li class="header-comp-navigation-ul-li">
             <router-link to="/">Home</router-link>
           </li>

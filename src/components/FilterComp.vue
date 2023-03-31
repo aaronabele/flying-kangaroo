@@ -58,10 +58,16 @@
       </div>
     </section>
   </div>
+  <ThreeColsComp />
 </template>
 
 <script>
+import ThreeColsComp from "./ThreeColsComp.vue";
+
 export default {
+  components: {
+    ThreeColsComp,
+  },
   data() {
     return {
       sourceData: [],
