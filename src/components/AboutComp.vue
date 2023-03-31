@@ -1,7 +1,12 @@
 <template>
-  <BannerComp />
+  <BannerComp>
+    <template #banner-slot>
+      <div class="banner-wrapper">
+        <h1 class="about-comp-main-header">Who We are</h1>
+      </div>
+    </template>
+  </BannerComp>
   <div class="about-comp-wrapper">
-    <h1 class="about-comp-main-header">Who We are</h1>
     <section class="about-comp-founder">
       <img
         class="about-comp-image-founder"
@@ -49,7 +54,6 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 .about-comp-wrapper {
   width: 1200px;
   margin-left: auto;
@@ -58,9 +62,13 @@ export default {
 
 .about-comp-main-header {
   text-align: center;
-  font-size: 48px;
+  font-size: 52px;
   padding: 1rem 0;
-  font-family: "Kaushan Script", cursive;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: white;
+  text-shadow: 5px 5px silver;
+  margin-top: 90px;
+  margin-left: 80px;
 }
 .about-comp-image-founder {
   height: 400px;
@@ -96,5 +104,49 @@ export default {
   width: 40ch;
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 16px;
+}
+
+.banner-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("@/assets/aboutUs.jpg");
+  height: 100%;
+  width: 100%;
+  background-repeat: none;
+  background-size: cover;
+  background-position: 50% 70%;
+}
+
+.banner-text-header {
+  position: absolute;
+  top: 30px;
+  left: 120px;
+  color: #fff;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 36px;
+}
+
+.banner-text-description {
+  position: absolute;
+  top: 80px;
+  left: 120px;
+  color: #fff;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 18px;
+}
+
+.banner-button {
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  color: black;
+  font-family: "Montserrat Alternates", sans-serif;
+  border: none;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  font-size: 18px;
 }
 </style>
