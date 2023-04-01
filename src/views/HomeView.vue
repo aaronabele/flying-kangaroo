@@ -3,7 +3,7 @@
   <CocktailCategorieComp />
   <SiteSeperatorComp />
   <ThreeColsComp />
-  <DiashowComp />
+  <DiashowComp :slides="slides"> </DiashowComp>
 </template>
 
 <script>
@@ -21,6 +21,23 @@ export default {
     SiteSeperatorComp,
     ThreeColsComp,
     DiashowComp,
+  },
+  data() {
+    return {
+      slides: [],
+    };
+  },
+  computed: {
+    comptedArr() {
+      return this.slides.slice(0, 5);
+    },
+  },
+  created() {
+    fetch(
+      "https://www.thecocktaildb.com/api/json/V2/9973533/randomselection.php"
+    )
+      .then((response) => response.json())
+      .then((data) => (this.slides = data.drinks));
   },
 };
 </script>

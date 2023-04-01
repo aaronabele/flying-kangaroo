@@ -25,7 +25,7 @@ export default {};
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .site-seperator-wrapper {
-  height: 15rem;
+  height: 21rem;
   background-color: #2a363c;
   margin-bottom: 4rem;
   color: white;
@@ -40,6 +40,7 @@ export default {};
 
 .site-seperator-header {
   font-family: "Kaushan Script", cursive;
+  font-size: 48px;
 }
 
 .site-seperator-text {
