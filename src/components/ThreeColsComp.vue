@@ -53,6 +53,10 @@ export default {};
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
 }
 
 .three-cols-first-one,

@@ -1,67 +1,98 @@
 <template>
-  <div class="diashow-wrapper">
-    <ul>
-      <li v-for="cocktail in sourceData" :key="cocktail.idDrink">
-        <img
-          class="diashow-single-picture"
-          :src="cocktail.strDrinkThumb"
-          :alt="cocktail.strDrink"
-        />
-      </li>
-    </ul>
+  <h2 class="diashow-header">Recent Customer's Creations</h2>
+  <div class="carousel">
+    <div class="carousel-inner">
+      <CarouselItem
+        v-for="(slide, index) in slides"
+        :slide="slide"
+        :key="`ìtem-${index}`"
+        :current-slide="currentSlide"
+        :index="index"
+        @mouseenter="stopSlideTimer"
+        @mouseleave="startSlideTimer"
+      >
+      </CarouselItem>
+      <CarouselControls @prev="prev" @next="next" />
+    </div>
   </div>
 </template>
 
 <script>
+import CarouselItem from "./CarouselItem.vue";
+import CarouselControls from "@/components/CarouselControls.vue";
+
 export default {
+  props: ["slides"],
+  components: { CarouselItem, CarouselControls },
   data() {
     return {
-      sourceData: [],
+      currentSlide: 0,
+      slideInterval: null,
     };
   },
-  created() {
-    fetch(
-      "https://www.thecocktaildb.com/api/json/V2/9973533/randomselection.php"
-    )
-      .then((response) => response.json())
-      .then((data) => (this.sourceData = data.drinks));
+  methods: {
+    setCurrentSlide(index) {
+      this.currentSlide = index;
+    },
+    _prev() {
+      const index =
+        this.currentSlide > 0 ? this.currentSlide - 1 : this.slides.length - 1;
+      this.currentSlide = index;
+    },
+    _next() {
+      const index =
+        this.currentSlide < this.slides.length - 1 ? this.currentSlide + 1 : 0;
+      this.currentSlide = index;
+    },
+    startSlideTimer() {
+      this.stopSlideTimer();
+      this.slideInterval = setInterval(() => {
+        this._next();
+      }, 5000);
+    },
+    stopSlideTimer() {
+      clearInterval(this.slideInterval);
+    },
+    prev() {
+      this._prev();
+      this.startSlideTimer();
+    },
+    next() {
+      this._next();
+      this.startSlideTimer();
+    },
+  },
+  mounted() {
+    this.startSlideTimer();
+  },
+  beforeUnmount() {
+    this.stopSlideTimer();
   },
 };
 </script>
 
 <style scoped>
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.diashow-header {
+  text-align: center;
+  font-family: "Kaushan Script", cursive;
+  margin-bottom: 4rem;
+  font-size: 48px;
+}
+.carousel {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-image-repeat: none;
+  background-color: #2a363c;
+  margin-bottom: 4rem;
 }
 
-.diashow-single-picture {
-  width: 100%;
-}
-
-.prev {
-  position: absolute;
-  top: 235px;
-  left: 70px;
-  rotate: 180deg;
-  padding: 0.4rem 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: none;
-  cursor: pointer;
-}
-
-.next {
-  position: absolute;
-  top: 235px;
-  right: 70px;
-  padding: 0.4rem 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: none;
-  cursor: pointer;
+.carousel-inner {
+  position: relative;
+  width: 900px;
+  height: 700px;
+  overflow: hidden;
 }
 </style>
