@@ -1,30 +1,36 @@
 <template>
   <div class="filter-comp-wrapper">
     <div class="filter-comp-product-length">
-      <span> {{ computedArr.length }} products</span>
+      <span> {{ this.sourceData.length }} products</span>
     </div>
     <div class="filter-comp-filter-sorting">
-      <span class="filter-comp-filter"
-        >filter &nbsp; &nbsp;
+      <span class="filter-comp-filter">
+        filter &nbsp; &nbsp;
         <img
           class="filter-comp-arrow-image"
           src="@/assets/pfeil.png"
           alt="Pfeil icon"
         />
       </span>
-      <span class="filter-comp-sorting"
-        >sort by &nbsp; &nbsp;
+      <span class="filter-comp-sorting" @click="sortList()">
+        sort by name &nbsp; &nbsp;
         <img
           class="filter-comp-arrow-image"
           src="@/assets/pfeil.png"
           alt="Pfeil icon"
-      /></span>
+          :class="[
+            this.listSorted === true
+              ? 'filter-comp-arrow-image-rotate'
+              : 'filter-comp-arrow-image',
+          ]"
+        />
+      </span>
     </div>
   </div>
   <div class="filter-comp-product-card-wrapper">
     <section
       class="filter-comp-single-product-card"
-      v-for="cocktail in computedArr"
+      v-for="cocktail in this.sourceData"
       :key="cocktail.idDrink"
     >
       <img
@@ -71,11 +77,50 @@ export default {
   data() {
     return {
       sourceData: [],
+      sortedData: [],
+      listSorted: false,
     };
   },
-  computed: {
-    computedArr() {
-      return this.sourceData.slice(0, 12);
+  computed: {},
+  methods: {
+    sortList() {
+      this.listSorted = !this.listSorted;
+
+      if (this.listSorted === true) {
+        this.sourceData.sort((a, b) => {
+          let aCocktail = a.strDrink.toLowerCase();
+          let bCocktail = b.strDrink.toLowerCase();
+
+          if (aCocktail > bCocktail) {
+            return 1;
+          }
+
+          if (aCocktail < bCocktail) {
+            return -1;
+          }
+
+          if (aCocktail === bCocktail) {
+            return 0;
+          }
+        });
+      } else {
+        this.sourceData.sort((b, a) => {
+          let aCocktail = a.strDrink.toLowerCase();
+          let bCocktail = b.strDrink.toLowerCase();
+
+          if (aCocktail > bCocktail) {
+            return 1;
+          }
+
+          if (aCocktail < bCocktail) {
+            return -1;
+          }
+
+          if (aCocktail === bCocktail) {
+            return 0;
+          }
+        });
+      }
     },
   },
   created() {
@@ -103,6 +148,9 @@ export default {
   border-bottom: 1px solid lightgray;
 }
 
+.filter-comp-sorting {
+  cursor: pointer;
+}
 .filter-comp-single-product-header {
   font-family: "Kaushan Script", cursive;
   margin: 0 0;
@@ -124,6 +172,12 @@ export default {
 .filter-comp-arrow-image {
   width: 12px;
   height: auto;
+}
+
+.filter-comp-arrow-image-rotate {
+  width: 12px;
+  height: auto;
+  transform: rotate(180deg);
 }
 
 .filter-comp-filter {
@@ -183,5 +237,13 @@ export default {
   font-family: "Montserrat Alternates", sans-serif;
   color: black;
   padding-top: 1rem;
+}
+
+.filter-comp-sorting-reset {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: black;
+  padding-top: 1rem;
+  margin-left: 2rem;
+  cursor: pointer;
 }
 </style>
