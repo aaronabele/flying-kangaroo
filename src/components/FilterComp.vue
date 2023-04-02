@@ -77,49 +77,31 @@ export default {
   data() {
     return {
       sourceData: [],
-      sortedData: [],
       listSorted: false,
     };
   },
   computed: {},
   methods: {
+    sortAscendingOrder() {
+      this.sourceData.sort((a, b) => {
+        let aCocktail = a.strDrink.toLowerCase();
+        let bCocktail = b.strDrink.toLowerCase();
+        return aCocktail > bCocktail ? 1 : -1;
+      });
+    },
+    sortDescendingOrder() {
+      this.sourceData.sort((b, a) => {
+        let aCocktail = a.strDrink.toLowerCase();
+        let bCocktail = b.strDrink.toLowerCase();
+        return aCocktail > bCocktail ? 1 : -1;
+      });
+    },
     sortList() {
       this.listSorted = !this.listSorted;
-
       if (this.listSorted === true) {
-        this.sourceData.sort((a, b) => {
-          let aCocktail = a.strDrink.toLowerCase();
-          let bCocktail = b.strDrink.toLowerCase();
-
-          if (aCocktail > bCocktail) {
-            return 1;
-          }
-
-          if (aCocktail < bCocktail) {
-            return -1;
-          }
-
-          if (aCocktail === bCocktail) {
-            return 0;
-          }
-        });
+        this.sortAscendingOrder();
       } else {
-        this.sourceData.sort((b, a) => {
-          let aCocktail = a.strDrink.toLowerCase();
-          let bCocktail = b.strDrink.toLowerCase();
-
-          if (aCocktail > bCocktail) {
-            return 1;
-          }
-
-          if (aCocktail < bCocktail) {
-            return -1;
-          }
-
-          if (aCocktail === bCocktail) {
-            return 0;
-          }
-        });
+        this.sortDescendingOrder();
       }
     },
   },
