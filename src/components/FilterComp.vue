@@ -1,19 +1,19 @@
 <template>
   <div class="filter-comp-wrapper">
     <div class="filter-comp-product-length">
-      <span> {{ this.sourceData.length }} products</span>
+      <span> {{ this.filteredCocktails.length }} products</span>
     </div>
     <div class="filter-comp-filter-sorting">
-      <span class="filter-comp-filter">
-        filter &nbsp; &nbsp;
-        <img
-          class="filter-comp-arrow-image"
-          src="@/assets/pfeil.png"
-          alt="Pfeil icon"
-        />
-      </span>
-      <span class="filter-comp-sorting" @click="sortList()">
-        sort by name &nbsp; &nbsp;
+      filter &nbsp; &nbsp;
+      <select class="filter-comp-filter" v-model="cselected">
+        <option value="select">Select</option>
+        <option value="Vodka">Vodka</option>
+        <option value="Gin">Gin</option>
+        <option value="Rum">Rum</option>
+      </select>
+      sort by name &nbsp; &nbsp;
+      <select class="filter-comp-sorting" v-model="listSorted">
+        &nbsp; &nbsp;
         <img
           class="filter-comp-arrow-image"
           src="@/assets/pfeil.png"
@@ -24,13 +24,15 @@
               : 'filter-comp-arrow-image',
           ]"
         />
-      </span>
+        <option selected value="ascending">Ascending order</option>
+        <option value="descending">Descending order</option>
+      </select>
     </div>
   </div>
   <div class="filter-comp-product-card-wrapper">
     <section
       class="filter-comp-single-product-card"
-      v-for="cocktail in this.sourceData"
+      v-for="cocktail in filteredCocktails"
       :key="cocktail.idDrink"
     >
       <img
@@ -77,34 +79,35 @@ export default {
   data() {
     return {
       sourceData: [],
-      listSorted: false,
+      listSorted: "ascending",
+      cselected: "select",
     };
   },
-  computed: {},
-  methods: {
-    sortAscendingOrder() {
-      this.sourceData.sort((a, b) => {
-        let aCocktail = a.strDrink.toLowerCase();
-        let bCocktail = b.strDrink.toLowerCase();
-        return aCocktail > bCocktail ? 1 : -1;
-      });
-    },
-    sortDescendingOrder() {
-      this.sourceData.sort((b, a) => {
-        let aCocktail = a.strDrink.toLowerCase();
-        let bCocktail = b.strDrink.toLowerCase();
-        return aCocktail > bCocktail ? 1 : -1;
-      });
-    },
-    sortList() {
-      this.listSorted = !this.listSorted;
-      if (this.listSorted === true) {
-        this.sortAscendingOrder();
-      } else {
-        this.sortDescendingOrder();
+  computed: {
+    filteredCocktails() {
+      let filteredCocktails = this.sourceData;
+
+      if (this.listSorted !== "select") {
+        filteredCocktails.sort((a, b) => {
+          let aCocktail = a.strDrink.toLowerCase();
+          let bCocktail = b.strDrink.toLowerCase();
+          if (this.listSorted === "ascending") {
+            return aCocktail > bCocktail ? 1 : -1;
+          } else {
+            return aCocktail < bCocktail ? 1 : -1;
+          }
+        });
       }
+
+      if (this.cselected !== "select") {
+        filteredCocktails = filteredCocktails.filter((item) => {
+          return item.strIngredient1 === this.cselected;
+        });
+      }
+      return filteredCocktails;
     },
   },
+  methods: {},
   created() {
     fetch("https://www.thecocktaildb.com/api/json/v2/9973533/popular.php")
       .then((response) => response.json())
@@ -164,6 +167,8 @@ export default {
 
 .filter-comp-filter {
   margin-right: 2rem;
+  cursor: pointer;
+  width: 8rem;
 }
 
 .filter-comp-single-product-card {
