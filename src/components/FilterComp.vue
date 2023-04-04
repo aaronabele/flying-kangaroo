@@ -30,7 +30,8 @@
     </div>
   </div>
   <div class="filter-comp-product-card-wrapper">
-    <section
+    <router-link
+      :to="{ name: 'details', params: { id: cocktail.idDrink } }"
       class="filter-comp-single-product-card"
       v-for="cocktail in filteredCocktails"
       :key="cocktail.idDrink"
@@ -64,7 +65,7 @@
           >
         </div>
       </div>
-    </section>
+    </router-link>
   </div>
   <ThreeColsComp />
 </template>
@@ -180,6 +181,8 @@ export default {
   align-items: center;
   flex-direction: column;
   margin-bottom: 1rem;
+  text-decoration: none;
+  color: black;
 }
 
 .filter-comp-single-product-card-img {
