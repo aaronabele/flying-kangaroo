@@ -17,7 +17,9 @@
         >Shop Now</router-link
       >
       <span class="cocktail-category-text-mixer">CRAFT YOUR OWN DRINK</span>
-      <router-link class="cocktail-category-router-link-mixer" to="/cocktails"
+      <router-link
+        class="cocktail-category-router-link-mixer"
+        to="/cocktail-mixer"
         >Shop Now</router-link
       >
     </div>
@@ -29,7 +31,11 @@
           pickled raclette. Man bun PBR&B mixtape, selfies +1 hoodie heirloom
           deep v lumbersexual viral edison bulb.
         </p>
-        <button class="cocktail-category-colelction-mixer-btn">Buy Now</button>
+        <router-link
+          to="/cocktails"
+          class="cocktail-category-colelction-mixer-btn"
+          >Buy Now</router-link
+        >
       </div>
       <div class="cocktail-category-mixer-text-area">
         <h2 class="cocktail-category-collection-header">Cocktail Mixer</h2>
@@ -37,9 +43,12 @@
           Activated charcoal lyft hella iceland. Mumblecore YOLO tousled
           kombucha pug, blackbird spyplane woke raw denim gastropub scenester.
         </p>
-        <button class="cocktail-category-colelction-mixer-btn">
+        <router-link
+          to="/cocktail-mixer"
+          class="cocktail-category-colelction-mixer-btn"
+        >
           Craft Now
-        </button>
+        </router-link>
       </div>
     </div>
   </section>
@@ -164,5 +173,9 @@ export default {
   padding: 0.5rem 1rem;
   border-radius: 15px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  border-radius: 15px;
 }
 </style>
