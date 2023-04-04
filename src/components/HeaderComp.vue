@@ -35,7 +35,9 @@
             <img src="@/assets/lupe.png" alt="Lupe weiß" />
           </li>
           <li>
-            <img src="@/assets/einkaufstasche.png" alt="Einkaufstasche weiß" />
+            <router-link to="/cart">
+              <img src="@/assets/einkaufstasche.png" alt="Einkaufstasche weiß"
+            /></router-link>
           </li>
         </div>
       </ul>
