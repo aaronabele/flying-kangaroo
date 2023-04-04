@@ -1,7 +1,7 @@
 <template>
   <div class="site-seperator-wrapper">
     <div class="site-seperator-positioning">
-      <slot name="siteseperatr-slot">
+      <slot name="siteseperator-slot">
         <h2 class="site-seperator-header">Kangaroo's Zero Waste Cocktails</h2>
         <p class="site-seperator-text">
           Mixtape hella blackbird spyplane, DIY sriracha microdosing knausgaard
