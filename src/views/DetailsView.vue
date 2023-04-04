@@ -151,14 +151,6 @@ export default {
 .detail-view-siteseperator-template {
   margin-bottom: 8rem;
 }
-.detail-view-siteseperator-cocktail {
-  position: absolute;
-  width: 400px;
-  height: auto;
-  bottom: 0px;
-  left: 0px;
-  overflow: hidden;
-}
 
 .detail-view-siteseperator-header {
   font-family: "Kaushan Script", cursive;
@@ -191,10 +183,10 @@ export default {
 }
 
 .detail-view-siteseperator-image-styling {
-  width: 350px;
-  height: auto;
   position: absolute;
   bottom: 71px;
   left: 500px;
+  width: 350px;
+  height: auto;
 }
 </style>

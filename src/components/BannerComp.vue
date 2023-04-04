@@ -4,7 +4,7 @@
       <div class="banner-wrapper">
         <h1 class="banner-text-header">Handcrafted Cocktails</h1>
         <span class="banner-text-description">- Made to perfection -</span>
-        <button class="banner-button">BUY NOW</button>
+        <router-link to="/cocktails" class="banner-button">BUY NOW</router-link>
       </div>
     </slot>
   </section>
@@ -66,5 +66,7 @@ export default {};
   padding: 0.5rem 1rem;
   background-color: #fff;
   font-size: 18px;
+  text-decoration: none;
+  color: black;
 }
 </style>
