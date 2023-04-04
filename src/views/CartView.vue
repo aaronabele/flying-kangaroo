@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>This is the Cart Site</div>
 </template>
 
 <script>
