@@ -17,16 +17,31 @@
         </div>
         <div class="detail-view-drink-price">
           <span> <b> Price</b></span>
-          <span> $ 10.00</span>
+          <span class="prize-span" @change="initChange()">{{
+            this.selectedDrinkSize[0]
+          }}</span>
         </div>
         <div class="detail-view-drink-size">
-          <span> <b> Size</b></span>
+          <span class="detail-view-drink-size-header"> <b> Size</b></span>
           <div class="detail-view-drink-size-sizes">
-            <span class="size-200">200ml</span
-            ><span class="size-400">400ml</span>
+            <span
+              class="size-200"
+              v-for="size in drinkSize"
+              :key="size"
+              @click="select(size)"
+              :class="[
+                this.selectedDrinkSize.includes(size.price)
+                  ? 'btn-selected'
+                  : '',
+              ]"
+            >
+              {{ size.label }}</span
+            >
           </div>
         </div>
-        <button class="detail-view-btn">Add to cart</button>
+        <button class="detail-view-btn" @click="pushItemIntoCartItems()">
+          Add to cart
+        </button>
       </div>
     </div>
   </div>
@@ -62,6 +77,12 @@ export default {
   data() {
     return {
       sourceData: [],
+      drinkSize: [
+        { id: 1, label: "200 ml", price: "$ 10.00" },
+        { id: 2, label: "400 ml", price: "$ 12.99" },
+      ],
+      selectedDrinkSize: ["Select your Size"],
+      cartItems: [],
     };
   },
   created() {
@@ -71,6 +92,33 @@ export default {
     )
       .then((response) => response.json())
       .then((data) => (this.sourceData = data.drinks[0]));
+  },
+  computed: {},
+  methods: {
+    select(size) {
+      this.selectedDrinkSize.push(size.price);
+      if (this.selectedDrinkSize.length === 2) {
+        return this.selectedDrinkSize.splice(-2, 1);
+      }
+    },
+    initChange() {
+      let initText = "Select your Size";
+      if (this.selectedDrinkSize === 0) {
+        this.selectedDrinkSize = initText;
+      }
+    },
+    pushItemIntoCartItems() {
+      if (this.selectedDrinkSize[0] === "Select your Size") {
+        alert("Please select a Drink Size");
+        return;
+      } else {
+        this.cartItems.push(
+          this.sourceData.strDrink,
+          this.sourceData.strDrinkThumb,
+          this.selectedDrinkSize
+        );
+      }
+    },
   },
 };
 </script>
@@ -110,6 +158,7 @@ export default {
   background-color: rgb(26, 26, 81);
   color: white;
   margin: 1rem 0rem;
+  cursor: pointer;
 }
 
 .detail-view-drink-price,
@@ -123,8 +172,13 @@ export default {
   margin-top: 2rem;
 }
 
-.size-200 {
+.size-200,
+.size-400 {
   margin-right: 1rem;
+  outline: 1px solid black;
+  padding: 0.3rem;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .detail-view-text {
@@ -188,5 +242,13 @@ export default {
   left: 500px;
   width: 350px;
   height: auto;
+}
+
+.detail-view-drink-size-header {
+  margin-bottom: 1rem;
+}
+
+.btn-selected {
+  background-color: lightgray;
 }
 </style>
