@@ -1,92 +1,133 @@
 <template>
   <div class="cocktailmixer-wrapper">
     <div class="cocktailmixer-mixer">
-      <section class="cocktailmixer-mixer-section"></section>
+      <section class="cocktailmixer-mixer-section">
+        <div
+          v-for="ingredient in itemQuantity"
+          :key="ingredient"
+          class="cocktail-mixer-block"
+        ></div>
+      </section>
     </div>
     <div class="cocktailmixer-mixer-second">
       <h2 class="cocktail-mixer-alc-nonalc-header">
-        Choose between Alcohol and Non-Alcohol:
+        1. Choose between Alcohol and Non-Alcohol:
       </h2>
       <div class="cocktail-mixer-alc-nonalc-wrapper">
         <section
           class="cocktail-mixer-alcoholic-nonalcoholic-section"
           :for="option.strAlcoholic"
-          v-for="option in computedArrAlcohol"
+          v-for="option in slicedDrinkCategory"
           :key="option.strAlcoholic"
         >
-          <input class="checkbox-styling" type="checkbox" />
+          <input
+            class="checkbox-styling"
+            type="checkbox"
+            :id="option.strAlcoholic"
+            :value="option.strAlcoholic"
+            v-model="selectedCheckboxes"
+          />
           <label> {{ option.strAlcoholic }}</label>
         </section>
       </div>
       <h2 class="cocktail-mixer-alc-nonalc-header">
-        Choose your favorite Alcohol:
+        2. Choose up to 5 Ingredients:
       </h2>
       <div class="cocktail-mixer-ingridients-wrapper">
         <section
           class="cocktail-mixer-alcoholic-ingridient-section"
-          v-for="alcohol in computedIngridientAlcohol"
-          :key="alcohol.strAlcoholic"
+          v-for="(value, key) in ingredients"
+          :key="key"
         >
-          <img
-            :src="`https://www.thecocktaildb.com/images/ingredients/${alcohol.strIngredient1}-Small.png`"
-            alt=""
-          />
-          <label class="ingridient-label"> {{ alcohol.strIngredient1 }}</label>
-          <input type="checkbox" />
-        </section>
-      </div>
-      <h2 class="cocktail-mixer-alc-nonalc-header">
-        Choose your favorite Ingridients:
-      </h2>
-      <div class="cocktail-mixer-ingridients-wrapper">
-        <section
-          class="cocktail-mixer-alcoholic-ingridient-section"
-          v-for="alcohol in computedIngridientsData"
-          :key="alcohol.strAlcoholic"
-        >
-          <img
-            :src="`https://www.thecocktaildb.com/images/ingredients/${alcohol.strIngredient1}-Small.png`"
-            alt=""
-          />
-          <label class="ingridient-label"> {{ alcohol.strIngredient1 }}</label>
-          <input type="checkbox" />
+          <div class="item-header-styling">
+            <h2 class="key-styling">{{ key }}</h2>
+          </div>
+          <div class="item-wrapper">
+            <div class="item-styling" v-for="item in value" :key="item.id">
+              <div class="item-size">
+                <input
+                  class="input-styling"
+                  type="text"
+                  placeholder="0"
+                  @change="inputQuantityPrice(item)"
+                  :id="item.id"
+                />
+                {{ item.price }} € per unit | <b>{{ item.name }}</b>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
       <div class="cocktailmixer-sum-area">
-        <h2 class="cocktail-mixer-sum-header">Sum:</h2>
-        <span class="cocktail-mixer-sum-amount"> $ 49.99</span>
+        <div class="sum-and-amount">
+          <div class="quantity-area">
+            <h3>Quantity:</h3>
+            <span class="cocktail-mixer-sum-amount"
+              >{{ this.itemQuantity.length }} Items</span
+            >
+          </div>
+          <div class="ingredients-area">
+            <h3>Selected:</h3>
+            <span
+              class="selected-item-styling"
+              v-for="ingredient in itemQuantity"
+              :key="ingredient"
+            >
+              {{ ingredient }},
+            </span>
+          </div>
+          <div class="sum-area">
+            <h3 class="cocktail-mixer-sum-header">Sum:</h3>
+            <span class="cocktail-mixer-sum-amount"> {{ this.sum }} €</span>
+          </div>
+        </div>
+        <button class="btn">Add to Cart</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import sourceData from "@/db.json";
+
 export default {
   data() {
     return {
-      sourceData: [],
-      alcoholicData: [],
-      ingridientsData: [],
+      ingredients: sourceData.ingredients,
+      drinkCategory: [],
+      itemQuantity: [],
+      itemPrice: [],
+      sum: 0,
+      selectedCheckboxes: [],
     };
   },
+  methods: {
+    inputQuantityPrice(item) {
+      if (this.itemQuantity.length < 5) {
+        this.itemQuantity.push(item.name);
+        this.itemPrice.push(item.price);
+        this.sum = Number(this.sum) + Number(item.price);
+      } else {
+        alert("You have picked the maximum amount of Ingredients");
+      }
+    },
+  },
   computed: {
-    computedArrAlcohol() {
-      return this.alcoholicData.slice(0, 2);
+    slicedDrinkCategory() {
+      return this.drinkCategory.slice(0, 2);
     },
-    computedIngridientAlcohol() {
-      return this.sourceData.slice(0, 10);
-    },
-    computedIngridientsData() {
-      return this.sourceData.slice(10, 30);
+  },
+  watch: {
+    selectedCheckboxes(newValue) {
+      if (newValue.length === 2) {
+        this.selectedCheckboxes.splice(-2, 1);
+      }
     },
   },
   created() {
-    fetch("https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list")
+    fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list")
       .then((response) => response.json())
-      .then((data) => (this.sourceData = data.drinks)),
-      fetch("https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list")
-        .then((response) => response.json())
-        .then((data) => (this.alcoholicData = data.drinks));
+      .then((data) => (this.drinkCategory = data.drinks));
   },
 };
 </script>
@@ -99,6 +140,17 @@ export default {
   display: grid;
   grid-template-columns: 2fr 1.5fr;
   margin-bottom: 4rem;
+}
+
+.cocktailmixer-mixer-section {
+  margin-top: 1rem;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  border-bottom: 2px solid grey;
+  height: 1000px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cocktailmixer-comp-main-header {
@@ -121,16 +173,28 @@ export default {
 }
 
 .cocktailmixer-mixer {
-  background-color: blueviolet;
+  width: 500px;
+  background-color: rgb(248, 248, 248);
+}
+
+.cocktail-mixer-block {
+  height: 200px;
+  width: 100%;
+  background-color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cocktail-mixer-alc-nonalc-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 2rem;
   font-family: "Montserrat Alternates", sans-serif;
-  padding: 1rem 0rem;
+  padding: 1rem;
 }
 
 .checkbox-styling {
@@ -142,37 +206,102 @@ export default {
 }
 
 .cocktail-mixer-alcoholic-ingridient-section {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 260px;
+  width: 800px;
+}
+
+.item-size {
+  width: 400px;
+}
+
+.item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 0.2rem;
+  padding: 1rem;
 }
 
 .cocktail-mixer-ingridients-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 260px);
-  justify-content: flex-start;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1rem;
+  flex-direction: column;
+  width: 800px;
+  height: auto;
   font-family: "Montserrat Alternates", sans-serif;
 }
 
 .cocktail-mixer-alc-nonalc-header {
   text-align: center;
   font-family: "Kaushan Script", cursive;
+  background-color: #2a363c;
+  color: white;
+  padding: 3rem 0rem;
+}
+
+.item-header-styling {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem 1rem;
+  border-bottom: 1px solid lightgray;
 }
 
 .cocktailmixer-sum-area {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   padding: 1rem 1rem;
   font-family: "Montserrat Alternates", sans-serif;
 }
 
 .cocktail-mixer-sum-amount {
-  margin-left: 1rem;
+  margin-left: 2rem;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.key-styling {
+  text-transform: uppercase;
+}
+
+.input-styling {
+  width: 2rem;
+}
+
+.sum-and-amount {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.btn {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  background-color: rgb(26, 26, 81);
+  color: white;
+  margin: 1rem 0rem;
+  cursor: pointer;
+}
+
+.sum-area,
+.quantity-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredients-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.selected-item-styling {
+  margin-left: 0.5rem;
 }
 </style>

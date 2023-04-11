@@ -238,8 +238,8 @@ export default {
 
 .detail-view-siteseperator-image-styling {
   position: absolute;
-  bottom: 71px;
-  left: 500px;
+  bottom: 15%;
+  left: 0%;
   width: 350px;
   height: auto;
 }
