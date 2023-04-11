@@ -1,0 +1,516 @@
+{
+  "ingredients": {
+    "liqueur": [
+      {
+        "id": 1,
+        "name": "Absinthe",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 2,
+        "name": "Amaretto",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 3,
+        "name": "Amarula",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 4,
+        "name": "Angostura Bitter",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 5,
+        "name": "Aperol",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 6,
+        "name": "Averna",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 7,
+        "name": "Baileys",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 8,
+        "name": "Batida de Coco",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 9,
+        "name": "Bénédictine",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 10,
+        "name": "Blue Curaçao",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 11,
+        "name": "Campari Bitters",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 12,
+        "name": "Cointreau",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 13,
+        "name": "Cream de Cacao White",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 14,
+        "name": "Crème de Bananes",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 15,
+        "name": "Crème de Cacao",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 16,
+        "name": "Crème de Cassis",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 17,
+        "name": "Crème de Menthe",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 18,
+        "name": "Curaçao Green",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 19,
+        "name": "Curaçao Orange",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 20,
+        "name": "Curaçao Red",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 21,
+        "name": "Curaçao White",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 22,
+        "name": "Galliano",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 23,
+        "name": "Grand Marnier",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 24,
+        "name": "Green banana",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 25,
+        "name": "Blackcurrant liqueur",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 26,
+        "name": "Triple sec",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 27,
+        "name": "Cherry liqueur",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 28,
+        "name": "Licor 43",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 29,
+        "name": "Lillet",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 30,
+        "name": "Luxury Liqueur",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 31,
+        "name": "Lyche liqueur",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 32,
+        "name": "Malibu",
+        "price": "2.00",
+        "category": "alcoholic"
+      }
+    ],
+    "brandy": [
+      {
+        "id": 33,
+        "name": "Apricot Brandy",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 34,
+        "name": "Armagnac",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 35,
+        "name": "Brandy",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 36,
+        "name": "Cherry Brandy",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 37,
+        "name": "Cognac",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 38,
+        "name": "Double grain",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 39,
+        "name": "Grappa",
+        "price": "2.00",
+        "category": "alcoholic"
+      }
+    ],
+    "gin": [
+      {
+        "id": 40,
+        "name": "Bombay Sapphire",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 41,
+        "name": "Bulldog Gin",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 42,
+        "name": "Monkey 47",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 43,
+        "name": "Hendricks Gin",
+        "price": "2.00",
+        "category": "alcoholic"
+      }
+    ],
+    "rum": [
+      {
+        "id": 44,
+        "name": "dark rum",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 45,
+        "name": "white rum",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 46,
+        "name": "Rum Overproof",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 46,
+        "name": "Myer's Rum",
+        "price": "2.00",
+        "category": "alcoholic"
+      }
+    ],
+    "tequila": [
+      {
+        "id": 47,
+        "name": "Sierra Tequila",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 48,
+        "name": "Don Julio Tequila",
+        "price": "2.00",
+        "category": "alcoholic"
+      }
+    ],
+    "wormwood": [
+      {
+        "id": 49,
+        "name": "Antica Formula",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 50,
+        "name": "Cinzano Rosso",
+        "price": "2.00",
+        "category": "alcoholic"
+      }
+    ],
+    "vodka": [
+      {
+        "id": 51,
+        "name": "Absolut Vodka Kurant",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 52,
+        "name": "Absolut Vodka Mandarin",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 53,
+        "name": "Absolut Vodka Peppar",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 54,
+        "name": "Apple Vodka",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 55,
+        "name": "Puschkin Black Sun",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 56,
+        "name": "Red Vodka",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 57,
+        "name": "Wodka Black",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 58,
+        "name": "Vodka Vanilla",
+        "price": "2.00",
+        "category": "alcoholic"
+      }
+    ],
+    "whisky": [
+      {
+        "id": 59,
+        "name": "Bourbon ",
+        "price": "2.00",
+        "category": "alcoholic"
+      },
+      {
+        "id": 60,
+        "name": "Scotch ",
+        "price": "2.00",
+        "category": "alcoholic"
+      }
+    ],
+    "juice": [
+      {
+        "id": 61,
+        "name": "Agave syrup",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 62,
+        "name": "Pineapple juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 63,
+        "name": "Apple juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 64,
+        "name": "Apple spritzer",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 65,
+        "name": "Banana nectar",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 66,
+        "name": "Pear juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 67,
+        "name": "Blood orange juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 68,
+        "name": "Cranberry juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 69,
+        "name": "Grapefruit juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 70,
+        "name": "Raspberry juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 71,
+        "name": "Currant juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 72,
+        "name": "Carrot juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 73,
+        "name": "Cherry juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 74,
+        "name": "Lime juice",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      }
+    ],
+    "lemonade": [
+      {
+        "id": 75,
+        "name": "Bitter Lemon",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 76,
+        "name": "Tonic water",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 77,
+        "name": "Coca Cola",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 78,
+        "name": "Ginger Ale",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 79,
+        "name": "Ginger Beer",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 80,
+        "name": "Grapefruit lemonade",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      },
+      {
+        "id": 81,
+        "name": "Orange lemonade",
+        "price": "1.50",
+        "category": "non-alcoholic"
+      }
+    ]
+  }
+}
