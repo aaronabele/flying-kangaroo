@@ -5,193 +5,225 @@
         "id": 1,
         "name": "Absinthe",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgreen"
       },
       {
         "id": 2,
         "name": "Amaretto",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       },
       {
         "id": 3,
         "name": "Amarula",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "coral"
       },
       {
         "id": 4,
         "name": "Angostura Bitter",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "orange"
       },
       {
         "id": 5,
         "name": "Aperol",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "darkorange"
       },
       {
         "id": 6,
         "name": "Averna",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "black"
       },
       {
         "id": 7,
         "name": "Baileys",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#E4C7A3"
       },
       {
         "id": 8,
         "name": "Batida de Coco",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 9,
         "name": "Bénédictine",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       },
       {
         "id": 10,
         "name": "Blue Curaçao",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#002B7F"
       },
       {
         "id": 11,
         "name": "Campari Bitters",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "red"
       },
       {
         "id": 12,
         "name": "Cointreau",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "brown"
       },
       {
         "id": 13,
         "name": "Cream de Cacao White",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 14,
         "name": "Crème de Bananes",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#FFF49C"
       },
       {
         "id": 15,
         "name": "Crème de Cacao",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       },
       {
         "id": 16,
         "name": "Crème de Cassis",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#301934"
       },
       {
         "id": 17,
         "name": "Crème de Menthe",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "green"
       },
       {
         "id": 18,
         "name": "Curaçao Green",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#90ee90"
       },
       {
         "id": 19,
         "name": "Curaçao Orange",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#FFD580"
       },
       {
         "id": 20,
         "name": "Curaçao Red",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#ffcccb"
       },
       {
         "id": 21,
         "name": "Curaçao White",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 22,
         "name": "Galliano",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightyellow"
       },
       {
         "id": 23,
         "name": "Grand Marnier",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "brown"
       },
       {
         "id": 24,
         "name": "Green banana",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#90ee90"
       },
       {
         "id": 25,
         "name": "Blackcurrant liqueur",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#301934"
       },
       {
         "id": 26,
         "name": "Triple sec",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 27,
         "name": "Cherry liqueur",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#8b0000"
       },
       {
         "id": 28,
         "name": "Licor 43",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#FFD580"
       },
       {
         "id": 29,
         "name": "Lillet",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#FFD580"
       },
       {
         "id": 30,
         "name": "Luxury Liqueur",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "orange"
       },
       {
         "id": 31,
         "name": "Lyche liqueur",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#dc5349"
       },
       {
         "id": 32,
         "name": "Malibu",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       }
     ],
     "brandy": [
@@ -199,43 +231,50 @@
         "id": 33,
         "name": "Apricot Brandy",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#C26A5A"
       },
       {
         "id": 34,
         "name": "Armagnac",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#c38058"
       },
       {
         "id": 35,
         "name": "Brandy",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       },
       {
         "id": 36,
         "name": "Cherry Brandy",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#8b0000"
       },
       {
         "id": 37,
         "name": "Cognac",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#9A463D"
       },
       {
         "id": 38,
         "name": "Double grain",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#FFD580"
       },
       {
         "id": 39,
         "name": "Grappa",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#FFD580"
       }
     ],
     "gin": [
@@ -243,25 +282,29 @@
         "id": 40,
         "name": "Bombay Sapphire",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 41,
-        "name": "Bulldog Gin",
+        "name": "Bulldog Gin",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 42,
         "name": "Monkey 47",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 43,
-        "name": "Hendricks Gin",
+        "name": "Hendricks Gin",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       }
     ],
     "rum": [
@@ -269,39 +312,45 @@
         "id": 44,
         "name": "dark rum",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       },
       {
         "id": 45,
         "name": "white rum",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 46,
         "name": "Rum Overproof",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       },
       {
         "id": 46,
         "name": "Myer's Rum",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       }
     ],
     "tequila": [
       {
         "id": 47,
-        "name": "Sierra Tequila",
+        "name": "Sierra Tequila",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 48,
-        "name": "Don Julio Tequila",
+        "name": "Don Julio Tequila",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       }
     ],
     "wormwood": [
@@ -309,13 +358,15 @@
         "id": 49,
         "name": "Antica Formula",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       },
       {
         "id": 50,
         "name": "Cinzano Rosso",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#5C4033"
       }
     ],
     "vodka": [
@@ -323,49 +374,57 @@
         "id": 51,
         "name": "Absolut Vodka Kurant",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 52,
         "name": "Absolut Vodka Mandarin",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 53,
         "name": "Absolut Vodka Peppar",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 54,
         "name": "Apple Vodka",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 55,
         "name": "Puschkin Black Sun",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 56,
         "name": "Red Vodka",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#8b0000"
       },
       {
         "id": 57,
         "name": "Wodka Black",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "black"
       },
       {
         "id": 58,
         "name": "Vodka Vanilla",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#ffffe0"
       }
     ],
     "whisky": [
@@ -373,13 +432,15 @@
         "id": 59,
         "name": "Bourbon ",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "#AF6C3E"
       },
       {
         "id": 60,
-        "name": "Scotch ",
+        "name": "Scotch",
         "price": "2.00",
-        "category": "alcoholic"
+        "category": "alcoholic",
+        "color": "brown"
       }
     ],
     "juice": [
@@ -387,85 +448,99 @@
         "id": 61,
         "name": "Agave syrup",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "yellow"
       },
       {
         "id": 62,
         "name": "Pineapple juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "yellow"
       },
       {
         "id": 63,
         "name": "Apple juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "orange"
       },
       {
         "id": 64,
         "name": "Apple spritzer",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "orange"
       },
       {
         "id": 65,
         "name": "Banana nectar",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "yellow"
       },
       {
         "id": 66,
         "name": "Pear juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "yellow"
       },
       {
         "id": 67,
         "name": "Blood orange juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "red"
       },
       {
         "id": 68,
         "name": "Cranberry juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#8b0000"
       },
       {
         "id": 69,
         "name": "Grapefruit juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#DA8B8C"
       },
       {
         "id": 70,
         "name": "Raspberry juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#E30B5C"
       },
       {
         "id": 71,
         "name": "Currant juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#3D3242"
       },
       {
         "id": 72,
         "name": "Carrot juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "orange"
       },
       {
         "id": 73,
         "name": "Cherry juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#8b0000"
       },
       {
         "id": 74,
         "name": "Lime juice",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#ffffe0"
       }
     ],
     "lemonade": [
@@ -473,43 +548,50 @@
         "id": 75,
         "name": "Bitter Lemon",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#ffffe0"
       },
       {
         "id": 76,
         "name": "Tonic water",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "lightgrey"
       },
       {
         "id": 77,
         "name": "Coca Cola",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#F40009"
       },
       {
         "id": 78,
         "name": "Ginger Ale",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#F0C76D"
       },
       {
         "id": 79,
         "name": "Ginger Beer",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#c27f38"
       },
       {
         "id": 80,
         "name": "Grapefruit lemonade",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "#c74069"
       },
       {
         "id": 81,
         "name": "Orange lemonade",
         "price": "1.50",
-        "category": "non-alcoholic"
+        "category": "non-alcoholic",
+        "color": "orange"
       }
     ]
   }

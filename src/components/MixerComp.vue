@@ -3,9 +3,10 @@
     <div class="cocktailmixer-mixer">
       <section class="cocktailmixer-mixer-section">
         <div
-          v-for="ingredient in itemQuantity"
+          v-for="ingredient in itemBackgroundColor"
           :key="ingredient"
           class="cocktail-mixer-block"
+          :style="{ backgroundColor: ingredient }"
         ></div>
       </section>
     </div>
@@ -51,6 +52,7 @@
                   placeholder="0"
                   @change="inputQuantityPrice(item)"
                   :id="item.id"
+                  @input="handleInput"
                 />
                 {{ item.price }} € per unit | <b>{{ item.name }}</b>
               </div>
@@ -97,6 +99,7 @@ export default {
       drinkCategory: [],
       itemQuantity: [],
       itemPrice: [],
+      itemBackgroundColor: [],
       sum: 0,
       selectedCheckboxes: [],
     };
@@ -106,9 +109,15 @@ export default {
       if (this.itemQuantity.length < 5) {
         this.itemQuantity.push(item.name);
         this.itemPrice.push(item.price);
+        this.itemBackgroundColor.push(item.color);
         this.sum = Number(this.sum) + Number(item.price);
       } else {
         alert("You have picked the maximum amount of Ingredients");
+      }
+    },
+    handleInput(event) {
+      if (event.target.value < 1) {
+        alert("Please put in a valid Quantity (>= 1)");
       }
     },
   },
@@ -174,13 +183,11 @@ export default {
 
 .cocktailmixer-mixer {
   width: 500px;
-  background-color: rgb(248, 248, 248);
 }
 
 .cocktail-mixer-block {
   height: 200px;
   width: 100%;
-  background-color: black;
   margin-top: 0;
   margin-bottom: 0;
   display: flex;
