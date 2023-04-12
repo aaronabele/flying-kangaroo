@@ -99,7 +99,6 @@ export default {
           }
         });
       }
-
       if (this.cselected !== "select") {
         filteredCocktails = filteredCocktails.filter((item) => {
           return item.strIngredient1 === this.cselected;

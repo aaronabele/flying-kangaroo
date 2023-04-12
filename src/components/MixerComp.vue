@@ -3,10 +3,13 @@
     <div class="cocktailmixer-mixer">
       <section class="cocktailmixer-mixer-section">
         <div
-          v-for="ingredient in itemBackgroundColor"
-          :key="ingredient"
+          v-for="cocktailIngredient in cocktail"
+          :key="cocktailIngredient.ingredient.id"
           class="cocktail-mixer-block"
-          :style="{ backgroundColor: ingredient }"
+          :style="{
+            '--ingredient-color': cocktailIngredient.ingredient.color,
+            '--units': cocktailIngredient.quantity,
+          }"
         ></div>
       </section>
     </div>
@@ -15,20 +18,13 @@
         1. Choose between Alcohol and Non-Alcohol:
       </h2>
       <div class="cocktail-mixer-alc-nonalc-wrapper">
-        <section
-          class="cocktail-mixer-alcoholic-nonalcoholic-section"
-          :for="option.strAlcoholic"
-          v-for="option in slicedDrinkCategory"
-          :key="option.strAlcoholic"
-        >
+        <section class="cocktail-mixer-alcoholic-nonalcoholic-section">
           <input
             class="checkbox-styling"
             type="checkbox"
-            :id="option.strAlcoholic"
-            :value="option.strAlcoholic"
-            v-model="selectedCheckboxes"
+            v-model="nonAlcoholic"
           />
-          <label> {{ option.strAlcoholic }}</label>
+          <label> Non-Alcoholic</label>
         </section>
       </div>
       <h2 class="cocktail-mixer-alc-nonalc-header">
@@ -50,9 +46,8 @@
                   class="input-styling"
                   type="text"
                   placeholder="0"
-                  @change="inputQuantityPrice(item)"
+                  @change="inputQuantityPrice(item, $event)"
                   :id="item.id"
-                  @input="handleInput"
                 />
                 {{ item.price }} € per unit | <b>{{ item.name }}</b>
               </div>
@@ -65,22 +60,21 @@
           <div class="quantity-area">
             <h3>Quantity:</h3>
             <span class="cocktail-mixer-sum-amount"
-              >{{ this.itemQuantity.length }} Items</span
+              >{{ cocktail.length }} Ingredients</span
             >
+            <span> {{ cocktailUnits }} Units</span>
           </div>
           <div class="ingredients-area">
             <h3>Selected:</h3>
-            <span
-              class="selected-item-styling"
-              v-for="ingredient in itemQuantity"
-              :key="ingredient"
-            >
-              {{ ingredient }},
+            <span class="selected-item-styling">
+              {{ selectedIngredients }}
             </span>
           </div>
           <div class="sum-area">
             <h3 class="cocktail-mixer-sum-header">Sum:</h3>
-            <span class="cocktail-mixer-sum-amount"> {{ this.sum }} €</span>
+            <span class="cocktail-mixer-sum-amount">
+              {{ cocktailPrice }} €</span
+            >
           </div>
         </div>
         <button class="btn">Add to Cart</button>
@@ -101,16 +95,17 @@ export default {
       itemPrice: [],
       itemBackgroundColor: [],
       sum: 0,
-      selectedCheckboxes: [],
+      nonAlcoholic: false,
+      cocktail: [],
     };
   },
   methods: {
-    inputQuantityPrice(item) {
-      if (this.itemQuantity.length < 5) {
-        this.itemQuantity.push(item.name);
-        this.itemPrice.push(item.price);
-        this.itemBackgroundColor.push(item.color);
-        this.sum = Number(this.sum) + Number(item.price);
+    inputQuantityPrice(item, event) {
+      if (this.cocktail.length < 5) {
+        this.cocktail.push({
+          ingredient: item,
+          quantity: event.target.value,
+        });
       } else {
         alert("You have picked the maximum amount of Ingredients");
       }
@@ -125,6 +120,23 @@ export default {
     slicedDrinkCategory() {
       return this.drinkCategory.slice(0, 2);
     },
+    cocktailUnits() {
+      let units = 0;
+      this.cocktail.forEach((item) => {
+        units += +item.quantity;
+      });
+      return units;
+    },
+    cocktailPrice() {
+      let sum = 0;
+      this.cocktail.forEach((item) => {
+        sum += item.quantity * item.ingredient.price;
+      });
+      return sum;
+    },
+    selectedIngredients() {
+      return this.cocktail.map((item) => item.ingredient.name).join(", ");
+    },
   },
   watch: {
     selectedCheckboxes(newValue) {
@@ -132,11 +144,6 @@ export default {
         this.selectedCheckboxes.splice(-2, 1);
       }
     },
-  },
-  created() {
-    fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list")
-      .then((response) => response.json())
-      .then((data) => (this.drinkCategory = data.drinks));
   },
 };
 </script>
@@ -160,6 +167,10 @@ export default {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column-reverse;
 }
 
 .cocktailmixer-comp-main-header {
@@ -186,13 +197,11 @@ export default {
 }
 
 .cocktail-mixer-block {
-  height: 200px;
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--ingredient-color);
+  flex-grow: var(--units, 1);
 }
 
 .cocktail-mixer-alc-nonalc-wrapper {
