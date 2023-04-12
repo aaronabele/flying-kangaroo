@@ -62,6 +62,7 @@
             <span class="cocktail-mixer-sum-amount"
               >{{ cocktail.length }} Ingredients</span
             >
+            &nbsp;
             <span> {{ cocktailUnits }} Units</span>
           </div>
           <div class="ingredients-area">
@@ -73,8 +74,13 @@
           <div class="sum-area">
             <h3 class="cocktail-mixer-sum-header">Sum:</h3>
             <span class="cocktail-mixer-sum-amount">
-              {{ cocktailPrice }} €</span
-            >
+              {{
+                new Intl.NumberFormat("de-DE", {
+                  style: "currency",
+                  currency: "EUR",
+                }).format(cocktailPrice)
+              }}
+            </span>
           </div>
         </div>
         <button class="btn">Add to Cart</button>
@@ -107,6 +113,7 @@ export default {
           quantity: event.target.value,
         });
       } else {
+        event.target.value = "";
         alert("You have picked the maximum amount of Ingredients");
       }
     },

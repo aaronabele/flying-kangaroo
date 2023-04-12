@@ -17,9 +17,9 @@
         </div>
         <div class="detail-view-drink-price">
           <span> <b> Price</b></span>
-          <span class="prize-span" @change="initChange()">{{
-            this.selectedDrinkSize[0]
-          }}</span>
+          <span class="prize-span" @change="initChange()"
+            >{{ this.selectedDrinkSize[0] }}
+          </span>
         </div>
         <div class="detail-view-drink-size">
           <span class="detail-view-drink-size-header"> <b> Size</b></span>
@@ -78,8 +78,8 @@ export default {
     return {
       sourceData: [],
       drinkSize: [
-        { id: 1, label: "200 ml", price: "$ 10.00" },
-        { id: 2, label: "400 ml", price: "$ 12.99" },
+        { id: 1, label: "200 ml", price: "10.00 €" },
+        { id: 2, label: "400 ml", price: "12.00 €" },
       ],
       selectedDrinkSize: ["Select your Size"],
       cartItems: [],
@@ -175,10 +175,10 @@ export default {
 .size-200,
 .size-400 {
   margin-right: 1rem;
-  outline: 1px solid black;
   padding: 0.3rem;
   border-radius: 10px;
   cursor: pointer;
+  border: 1px solid lightgray;
 }
 
 .detail-view-text {
