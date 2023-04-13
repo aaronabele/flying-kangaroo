@@ -33,7 +33,7 @@
       <div class="cocktail-mixer-ingridients-wrapper">
         <section
           class="cocktail-mixer-alcoholic-ingridient-section"
-          v-for="(value, key) in ingredients"
+          v-for="(value, key) in filteredIngredients"
           :key="key"
         >
           <div class="item-header-styling">
@@ -96,10 +96,6 @@ export default {
   data() {
     return {
       ingredients: sourceData.ingredients,
-      drinkCategory: [],
-      itemQuantity: [],
-      itemPrice: [],
-      itemBackgroundColor: [],
       sum: 0,
       nonAlcoholic: false,
       cocktail: [],
@@ -124,9 +120,6 @@ export default {
     },
   },
   computed: {
-    slicedDrinkCategory() {
-      return this.drinkCategory.slice(0, 2);
-    },
     cocktailUnits() {
       let units = 0;
       this.cocktail.forEach((item) => {
@@ -144,11 +137,44 @@ export default {
     selectedIngredients() {
       return this.cocktail.map((item) => item.ingredient.name).join(", ");
     },
-  },
-  watch: {
-    selectedCheckboxes(newValue) {
-      if (newValue.length === 2) {
-        this.selectedCheckboxes.splice(-2, 1);
+    filteredIngredients() {
+      /*
+      let arr = this.ingredients;
+      let entries = Object.entries(arr);
+
+      if (this.nonAlcoholic === true) {
+        entries.forEach((entrie) => {
+          entrie[1].filter((filteredEntrie) => {
+            console.log(
+              filteredEntrie.name,
+              filteredEntrie.category,
+              filteredEntrie.category === "non-alcoholic"
+            );
+            entries = filteredEntrie.category === "non-alcoholic";
+          });
+        });
+        return entries;
+      } else {
+        return arr;
+      }
+      */
+      let optimizedData = Object.values(this.ingredients);
+      let arr = [];
+
+      if (this.nonAlcoholic === true) {
+        optimizedData.forEach((item) => {
+          item.filter((filteredItem) => {
+            if (filteredItem.category === "non-alcoholic") {
+              arr.push({ filteredItem });
+              optimizedData = arr;
+            }
+          });
+        });
+        console.log(optimizedData);
+        return optimizedData;
+      } else {
+        console.log(this.ingredients);
+        return this.ingredients;
       }
     },
   },
