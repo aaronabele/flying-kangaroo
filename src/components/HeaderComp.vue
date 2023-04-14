@@ -36,8 +36,12 @@
           </li>
           <li>
             <router-link to="/cart">
-              <img src="@/assets/einkaufstasche.png" alt="Einkaufstasche weiß"
-            /></router-link>
+              <img
+                src="@/assets/einkaufstasche.png"
+                alt="Einkaufstasche weiß"
+              />
+              {{ IngredientStore.completeCocktail.length }}</router-link
+            >
           </li>
         </div>
       </ul>
@@ -47,7 +51,13 @@
 </template>
 
 <script>
-export default {};
+import { useIngredientStore } from "@/stores/IngredientStore.js";
+export default {
+  setup() {
+    const IngredientStore = useIngredientStore();
+    return { IngredientStore };
+  },
+};
 </script>
 
 <style scoped>
