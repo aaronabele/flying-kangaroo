@@ -90,7 +90,7 @@
             </span>
           </div>
         </div>
-        <button class="btn">Add to Cart</button>
+        <button class="btn" @click="sendCocktail()">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -98,12 +98,15 @@
 
 <script>
 import { useIngredientStore } from "@/stores/IngredientStore.js";
-const IngredientStore = useIngredientStore();
 
 export default {
+  setup() {
+    const IngredientStore = useIngredientStore();
+    return { IngredientStore };
+  },
   data() {
     return {
-      ingredients: IngredientStore.ingredient.ingredients,
+      ingredients: this.IngredientStore.ingredient.ingredients,
       sum: 0,
       nonAlcoholic: false,
       cocktail: [],
@@ -125,6 +128,10 @@ export default {
       if (event.target.value < 1) {
         alert("Please put in a valid Quantity (>= 1)");
       }
+    },
+    sendCocktail() {
+      this.IngredientStore.sendCocktail(this.cocktail);
+      this.IngredientStore.sendPrice(this.cocktailPrice);
     },
   },
   computed: {
