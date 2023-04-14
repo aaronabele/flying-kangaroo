@@ -12,6 +12,13 @@
           }"
         ></div>
       </section>
+      <img class="cocktail-glass" src="@/assets/pngwing.com.png" alt="glas" />
+      <img class="cocktail-straw" src="@/assets/straw.png" alt="straw" />
+      <img
+        class="cocktail-icecubes"
+        src="@/assets/icecubes.png"
+        alt="ice cubes"
+      />
     </div>
     <div class="cocktailmixer-mixer-second">
       <h2 class="cocktail-mixer-alc-nonalc-header">
@@ -138,44 +145,10 @@ export default {
       return this.cocktail.map((item) => item.ingredient.name).join(", ");
     },
     filteredIngredients() {
-      /*
-      let arr = this.ingredients;
-      let entries = Object.entries(arr);
-
-      if (this.nonAlcoholic === true) {
-        entries.forEach((entrie) => {
-          entrie[1].filter((filteredEntrie) => {
-            console.log(
-              filteredEntrie.name,
-              filteredEntrie.category,
-              filteredEntrie.category === "non-alcoholic"
-            );
-            entries = filteredEntrie.category === "non-alcoholic";
-          });
-        });
-        return entries;
-      } else {
-        return arr;
-      }
-      */
-      let optimizedData = Object.values(this.ingredients);
-      let arr = [];
-
-      if (this.nonAlcoholic === true) {
-        optimizedData.forEach((item) => {
-          item.filter((filteredItem) => {
-            if (filteredItem.category === "non-alcoholic") {
-              arr.push({ filteredItem });
-              optimizedData = arr;
-            }
-          });
-        });
-        console.log(optimizedData);
-        return optimizedData;
-      } else {
-        console.log(this.ingredients);
+      if (!this.nonAlcoholic) {
         return this.ingredients;
       }
+      return console.log("hello");
     },
   },
 };
@@ -193,17 +166,18 @@ export default {
 
 .cocktailmixer-mixer-section {
   margin-top: 1rem;
-  border-left: 2px solid grey;
-  border-right: 2px solid grey;
-  border-bottom: 2px solid grey;
-  height: 1000px;
-  width: 80%;
+  height: 692px;
+  width: 405px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column-reverse;
+  z-index: 1;
+  position: absolute;
+  top: 196px;
+  left: 47px;
 }
 
 .cocktailmixer-comp-main-header {
@@ -227,6 +201,7 @@ export default {
 
 .cocktailmixer-mixer {
   width: 500px;
+  position: relative;
 }
 
 .cocktail-mixer-block {
@@ -235,6 +210,38 @@ export default {
   margin-bottom: 0;
   background-color: var(--ingredient-color);
   flex-grow: var(--units, 1);
+  z-index: 1;
+  margin-right: 20rem;
+}
+
+.cocktail-glass {
+  width: 420px;
+  height: auto;
+  z-index: 2;
+  position: absolute;
+  top: 180px;
+  right: 40px;
+  margin-right: 10rem;
+}
+
+.cocktail-straw {
+  z-index: 1;
+  width: 600px;
+  height: auto;
+  position: absolute;
+  right: 250px;
+  top: 50px;
+  rotate: 150deg;
+}
+
+.cocktail-icecubes {
+  z-index: 2;
+  width: 400px;
+  height: auto;
+  position: absolute;
+  top: 344px;
+  right: 210px;
+  rotate: 180deg;
 }
 
 .cocktail-mixer-alc-nonalc-wrapper {
