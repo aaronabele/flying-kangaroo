@@ -6,6 +6,8 @@
 <script>
 import HeaderComp from "@/components/HeaderComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
+import { useProductStore } from "@/stores/ProductStore";
+useProductStore();
 
 export default {
   components: {
