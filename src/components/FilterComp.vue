@@ -71,6 +71,9 @@
 </template>
 
 <script>
+import { useProductStore } from "@/stores/ProductStore";
+const ProductStore = useProductStore();
+ProductStore.getProducts();
 import ThreeColsComp from "./ThreeColsComp.vue";
 
 export default {
@@ -79,7 +82,7 @@ export default {
   },
   data() {
     return {
-      sourceData: [],
+      sourceData: ProductStore.products,
       listSorted: "ascending",
       cselected: "select",
     };
@@ -106,12 +109,6 @@ export default {
       }
       return filteredCocktails;
     },
-  },
-  methods: {},
-  created() {
-    fetch("https://www.thecocktaildb.com/api/json/v2/9973533/popular.php")
-      .then((response) => response.json())
-      .then((data) => (this.sourceData = data.drinks));
   },
 };
 </script>

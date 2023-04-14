@@ -97,12 +97,13 @@
 </template>
 
 <script>
-import sourceData from "@/db.json";
+import { useIngredientStore } from "@/stores/IngredientStore.js";
+const IngredientStore = useIngredientStore();
 
 export default {
   data() {
     return {
-      ingredients: sourceData.ingredients,
+      ingredients: IngredientStore.ingredient.ingredients,
       sum: 0,
       nonAlcoholic: false,
       cocktail: [],
