@@ -7,39 +7,37 @@
 </template>
 
 <script>
-import BannerComp from "@/components/BannerComp.vue";
-import CocktailCategorieComp from "@/components/CocktailCategorieComp.vue";
-import SiteSeperatorComp from "@/components/SiteSeperatorComp.vue";
-import ThreeColsComp from "@/components/ThreeColsComp.vue";
-import DiashowComp from "@/components/DiashowComp.vue";
+import BannerComp from '@/components/BannerComp.vue'
+import CocktailCategorieComp from '@/components/CocktailCategorieComp.vue'
+import SiteSeperatorComp from '@/components/SiteSeperatorComp.vue'
+import ThreeColsComp from '@/components/ThreeColsComp.vue'
+import DiashowComp from '@/components/DiashowComp.vue'
 
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: {
     BannerComp,
     CocktailCategorieComp,
     SiteSeperatorComp,
     ThreeColsComp,
-    DiashowComp,
+    DiashowComp
   },
   data() {
     return {
-      slides: [],
-    };
+      slides: []
+    }
   },
   computed: {
     comptedArr() {
-      return this.slides.slice(0, 5);
-    },
+      return this.slides.slice(0, 5)
+    }
   },
   created() {
-    fetch(
-      "https://www.thecocktaildb.com/api/json/V2/9973533/randomselection.php"
-    )
+    fetch('https://www.thecocktaildb.com/api/json/V2/9973533/randomselection.php')
       .then((response) => response.json())
-      .then((data) => (this.slides = data.drinks));
-  },
-};
+      .then((data) => (this.slides = data.drinks))
+  }
+}
 </script>
 
 <style>
