@@ -40,8 +40,9 @@
                 src="@/assets/einkaufstasche.png"
                 alt="Einkaufstasche weiß"
               />
-              {{ IngredientStore.completeCocktail.length }}</router-link
-            >
+
+              {{ IngredientStore.completeCocktail.length }}
+            </router-link>
           </li>
         </div>
       </ul>
