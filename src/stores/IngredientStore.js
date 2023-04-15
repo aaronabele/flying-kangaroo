@@ -9,7 +9,7 @@ export const useIngredientStore = defineStore("ingredientStore", {
       ingredient,
       completeCocktail: useStorage("cocktails", []),
       completePrice: useStorage("sum", []),
-      CartLength: useStorage("quantity", 0),
+      result: 0,
     };
   },
   //actions
@@ -18,12 +18,9 @@ export const useIngredientStore = defineStore("ingredientStore", {
       this.completeCocktail.push(cocktail);
     },
     sendPrice(sum) {
-      let result = +result + sum;
-      this.completePrice.push(result);
+      this.result = +this.result + sum;
+      this.completePrice.push(this.result);
     },
   },
   //getter
-  completeCocktailLength() {
-    return (this.CartLength = this.completeCocktail.length);
-  },
 });

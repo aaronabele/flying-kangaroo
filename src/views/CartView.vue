@@ -6,7 +6,7 @@
         <div>
           <div
             class="cart-section-items"
-            v-for="item in IngredientStore.completeCocktail"
+            v-for="(item, index) in IngredientStore.completeCocktail"
             :key="item.id"
           >
             <div>
@@ -51,7 +51,9 @@
                 <div>
                   <label>Qty&nbsp;&nbsp;</label>
                   <input class="input-styling" type="number" v-model="qty" />
-                  <button class="btn-delete">delete</button>
+                  <button class="btn-delete" @click="deleteItem(index)">
+                    delete
+                  </button>
                 </div>
                 <div>
                   <span>subtotal: 10.00 €</span>
@@ -92,6 +94,12 @@ export default {
         style: "currency",
         currency: "EUR",
       }).format(sum);
+    },
+  },
+  methods: {
+    deleteItem(index) {
+      this.IngredientStore.completePrice.splice(index, 1);
+      this.IngredientStore.completeCocktail.splice(index, 1);
     },
   },
 };
