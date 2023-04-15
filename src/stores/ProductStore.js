@@ -1,10 +1,12 @@
 import { defineStore } from "pinia";
+import { useStorage } from "@vueuse/core";
 
 export const useProductStore = defineStore("productStore", {
   //state
   state: () => {
     return {
-      products: [],
+      products: useStorage("products", []),
+      productCocktail: useStorage("productCocktail", []),
     };
   },
   //actions
@@ -20,6 +22,13 @@ export const useProductStore = defineStore("productStore", {
         //incase of an error we just log it to the console
         console.log(error);
       }
+    },
+    sendCocktail(cocktail) {
+      this.productCocktail.push(cocktail);
+    },
+    sendPrice(sum) {
+      this.result = +this.result + sum;
+      this.completePrice.push(this.result);
     },
   },
   //getter

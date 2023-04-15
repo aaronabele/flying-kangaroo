@@ -41,7 +41,7 @@
                 alt="Einkaufstasche weiß"
               />
 
-              {{ IngredientStore.completeCocktail.length }}
+              {{ showCartLength }}
             </router-link>
           </li>
         </div>
@@ -53,10 +53,21 @@
 
 <script>
 import { useIngredientStore } from "@/stores/IngredientStore.js";
+import { useProductStore } from "@/stores/ProductStore";
 export default {
   setup() {
     const IngredientStore = useIngredientStore();
-    return { IngredientStore };
+    const ProductStore = useProductStore();
+    return { IngredientStore, ProductStore };
+  },
+  computed: {
+    showCartLength() {
+      let sum = 0;
+      sum +=
+        this.IngredientStore.completeCocktail.length +
+        this.ProductStore.productCocktail.length;
+      return sum;
+    },
   },
 };
 </script>

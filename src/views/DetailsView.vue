@@ -69,8 +69,13 @@
 
 <script>
 import SiteSeperatorComp from "@/components/SiteSeperatorComp.vue";
+import { useProductStore } from "@/stores/ProductStore.js";
 
 export default {
+  setup() {
+    const ProductStore = useProductStore();
+    return { ProductStore };
+  },
   components: {
     SiteSeperatorComp,
   },
@@ -112,11 +117,13 @@ export default {
         alert("Please select a Drink Size");
         return;
       } else {
-        this.cartItems.push(
-          this.sourceData.strDrink,
-          this.sourceData.strDrinkThumb,
-          this.selectedDrinkSize
-        );
+        this.cartItems.push({
+          name: this.sourceData.strDrink,
+          pic: this.sourceData.strDrinkThumb,
+          price: this.selectedDrinkSize,
+          quantity: 1,
+        });
+        this.ProductStore.sendCocktail(this.cartItems);
       }
     },
   },
