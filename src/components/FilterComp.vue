@@ -71,18 +71,21 @@
 </template>
 
 <script>
-import { useProductStore } from "@/stores/ProductStore";
-const ProductStore = useProductStore();
-ProductStore.getProducts();
+import { useProductStore } from "@/stores/ProductStore.js";
 import ThreeColsComp from "./ThreeColsComp.vue";
 
 export default {
+  setup() {
+    const ProductStore = useProductStore();
+    ProductStore.getProducts();
+    return { ProductStore };
+  },
   components: {
     ThreeColsComp,
   },
   data() {
     return {
-      sourceData: ProductStore.products,
+      sourceData: this.ProductStore.products,
       listSorted: "ascending",
       cselected: "select",
     };

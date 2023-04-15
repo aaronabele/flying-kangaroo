@@ -27,13 +27,14 @@
                 <div class="cart-section-item-details-wrapper">
                   <div class="cart-wrapper-styling">
                     {{ ingredient.quantity }}x &nbsp;
-
-                    {{
-                      new Intl.NumberFormat("de-DE", {
-                        style: "currency",
-                        currency: "EUR",
-                      }).format(ingredient.ingredient.price)
-                    }}
+                    <div class="cart-price">
+                      {{
+                        new Intl.NumberFormat("de-DE", {
+                          style: "currency",
+                          currency: "EUR",
+                        }).format(ingredient.ingredient.price)
+                      }}
+                    </div>
                     &nbsp;
                     <div
                       class="div-color"
@@ -56,7 +57,60 @@
                   </button>
                 </div>
                 <div>
-                  <span>subtotal: 10.00 €</span>
+                  <span
+                    >subtotal:
+                    {{
+                      new Intl.NumberFormat("de-DE", {
+                        style: "currency",
+                        currency: "EUR",
+                      }).format(showPrice(item))
+                    }}</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-section">
+            <div
+              class="single-product"
+              v-for="product in this.ProductStore.productCocktail"
+              :key="product"
+            >
+              <div v-for="item in product" :key="item">
+                <div class="product-wrapper">
+                  <div class="product-image-section">
+                    <img
+                      class="product-section-image"
+                      :src="item.pic"
+                      :alt="item.name"
+                    />
+                  </div>
+                  <div class="product-details-section">
+                    <div class="product-details-title"><b>Cocktail:</b></div>
+                    <div class="product-details-details">
+                      <div class="product-details-item">{{ item.name }}</div>
+                      <div class="product-details-price">
+                        Price per drink: {{ item.price[0] }}
+                      </div>
+                      <div class="product-details-qty-del-sub">
+                        <div>
+                          Qty
+                          <input
+                            type="number"
+                            :value="item.quantity"
+                            class="input-styling"
+                          />
+                          <button
+                            class="btn-delete"
+                            @click="deleteProduct(index)"
+                          >
+                            delete
+                          </button>
+                        </div>
+                        <span>subtotal: {{ item.price[0] }}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -64,9 +118,16 @@
         </div>
       </div>
       <div class="cart-section-total-wrapper">
-        <div class="cart-section-total">Subtotal {{ calculateSum }}</div>
-        <button>Check out</button>
-        <button>Continue shopping</button>
+        <div class="section-price-section">
+          <span class="cart-section-total">Total</span>
+          <span class="cart-section-sum">{{ calculateSum }}</span>
+        </div>
+        <div class="section-btn-section">
+          <button class="btn-checkout">Check out</button>
+          <router-link to="/cocktails" class="router-continue-shopping"
+            >Continue shopping</router-link
+          >
+        </div>
       </div>
     </div>
   </section>
@@ -74,10 +135,13 @@
 
 <script>
 import { useIngredientStore } from "@/stores/IngredientStore.js";
+import { useProductStore } from "@/stores/ProductStore";
+
 export default {
   setup() {
     const IngredientStore = useIngredientStore();
-    return { IngredientStore };
+    const ProductStore = useProductStore();
+    return { IngredientStore, ProductStore };
   },
   data() {
     return {
@@ -90,6 +154,12 @@ export default {
       this.IngredientStore.completePrice.forEach((item) => {
         sum += item;
       });
+      this.ProductStore.productCocktail.forEach((product) => {
+        product.forEach((productPrice) => {
+          console.log(productPrice.quantity);
+          sum += +productPrice.price[0].split("€").join("");
+        });
+      });
       return new Intl.NumberFormat("de-DE", {
         style: "currency",
         currency: "EUR",
@@ -100,6 +170,16 @@ export default {
     deleteItem(index) {
       this.IngredientStore.completePrice.splice(index, 1);
       this.IngredientStore.completeCocktail.splice(index, 1);
+    },
+    deleteProduct(index) {
+      this.ProductStore.productCocktail.splice(index, 1);
+    },
+    showPrice(item) {
+      let result = 0;
+      item.forEach((ingredient) => {
+        result += ingredient.ingredient.price * ingredient.quantity;
+      });
+      return result;
     },
   },
 };
@@ -145,15 +225,63 @@ export default {
 }
 
 .cart-section-total-wrapper {
-  outline: 1px solid lightgray;
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 1rem 0;
   width: 350px;
   height: 350px;
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(232, 232, 232);
+}
+
+.section-price-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-btn-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cart-section-total {
+  font-size: 3rem;
+}
+
+.cart-section-sum {
+  font-size: 1.8rem;
+}
+
+.btn-checkout {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(26, 26, 81);
+  color: white;
+}
+
+.router-continue-shopping {
+  width: 100%;
+  height: 40px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .section-title-ingredient {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: "Kaushan Script", cursive;
   font-weight: 800;
 }
 
@@ -192,5 +320,66 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.cart-price {
+  width: 60px;
+}
+
+.product-wrapper {
+  position: relative;
+  width: 700px;
+  height: 190px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  outline: 1px solid lightgray;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.product-image-section {
+  width: 150px;
+  height: 100%;
+  margin-right: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-section-image {
+  width: 120px;
+  height: auto;
+}
+
+.product-details-section {
+  width: 90%;
+  height: 100%;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.product-details-details {
+  margin-left: 5rem;
+}
+
+.product-details-item,
+.product-details-price {
+  margin-bottom: 0.2rem;
+}
+
+.product-details-qty-del-sub {
+  position: absolute;
+  padding: 1rem;
+  right: 0px;
+  bottom: 0px;
+  width: 450px;
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-details-title {
+  font-family: "Kaushan Script", cursive;
 }
 </style>
