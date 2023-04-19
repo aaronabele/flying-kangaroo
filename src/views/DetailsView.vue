@@ -83,8 +83,8 @@ export default {
     return {
       sourceData: [],
       drinkSize: [
-        { id: 1, label: "200 ml", price: "10.00 €" },
-        { id: 2, label: "400 ml", price: "12.00 €" },
+        { id: 1, label: "200 ml", price: 10.0 },
+        { id: 2, label: "400 ml", price: 12.0 },
       ],
       selectedDrinkSize: ["Select your Size"],
       cartItems: [],

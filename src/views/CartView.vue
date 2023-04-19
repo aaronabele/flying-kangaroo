@@ -97,7 +97,9 @@
                           Qty
                           <input
                             type="number"
-                            :value="item.quantity"
+                            min="0"
+                            max="10"
+                            v-model="item.quantity"
                             class="input-styling"
                           />
                           <button
@@ -107,7 +109,9 @@
                             delete
                           </button>
                         </div>
-                        <span>subtotal: {{ item.price[0] }}</span>
+                        <span
+                          >subtotal: {{ item.price[0] * item.quantity }}</span
+                        >
                       </div>
                     </div>
                   </div>
@@ -156,8 +160,7 @@ export default {
       });
       this.ProductStore.productCocktail.forEach((product) => {
         product.forEach((productPrice) => {
-          console.log(productPrice.quantity);
-          sum += +productPrice.price[0].split("€").join("");
+          sum += +productPrice.price[0];
         });
       });
       return new Intl.NumberFormat("de-DE", {
