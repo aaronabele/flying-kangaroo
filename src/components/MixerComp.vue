@@ -153,10 +153,22 @@ export default {
       return this.cocktail.map((item) => item.ingredient.name).join(", ");
     },
     filteredIngredients() {
-      if (!this.nonAlcoholic) {
+      if (this.nonAlcoholic === true) {
+        const copy = {};
+
+        for (let key of Object.keys(this.ingredients)) {
+          const filtered = this.ingredients[key].filter(
+            (item) => item.category === "non-alcoholic"
+          );
+          if (filtered.length > 0) {
+            copy[key] = filtered;
+          }
+        }
+        return copy;
+      } else {
+        // return all ingredient
         return this.ingredients;
       }
-      return console.log("hello");
     },
   },
 };
