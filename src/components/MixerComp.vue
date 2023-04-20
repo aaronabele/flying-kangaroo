@@ -118,6 +118,7 @@ export default {
         this.cocktail.push({
           ingredient: item,
           quantity: event.target.value,
+          totalQuantity: 1,
         });
       } else {
         event.target.value = "";
