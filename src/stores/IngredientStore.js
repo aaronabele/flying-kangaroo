@@ -46,6 +46,20 @@ export const useIngredientStore = defineStore("ingredientStore", {
       this.sendCocktail(this.cocktail);
       this.sendPrice(this.cocktailPrice);
     },
+    deleteItem(index) {
+      this.completePrice.splice(index, 1);
+      this.completeCocktail.splice(index, 1);
+    },
+    showSubtotalIngredients(item) {
+      let resultIngredients = 0;
+      item.forEach((ingredient) => {
+        resultIngredients +=
+          +ingredient.ingredient.price * +ingredient.quantity;
+      });
+      resultIngredients =
+        resultIngredients * item[item.length - 1].totalQuantity;
+      return resultIngredients;
+    },
   },
   //getter
   getters: {
@@ -83,6 +97,17 @@ export const useIngredientStore = defineStore("ingredientStore", {
         // return all ingredient
         return this.ingredients;
       }
+    },
+    calculateSubtotalIngredients() {
+      let IngredientSum = 0;
+      this.completeCocktail.forEach((item) => {
+        let lastElement = item[item.length - 1];
+        item.forEach((cocktail) => {
+          IngredientSum +=
+            cocktail.ingredient.price * lastElement.totalQuantity;
+        });
+      });
+      return IngredientSum;
     },
   },
 });

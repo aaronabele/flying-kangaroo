@@ -32,6 +32,14 @@ export const useProductStore = defineStore("productStore", {
       this.result = +this.result + sum;
       this.completePrice.push(this.result);
     },
+    deleteProduct(index) {
+      this.productCocktail.splice(index, 1);
+    },
+    showSubtotalProducts(item) {
+      let resultProducts = 0;
+      resultProducts += item.price[0] * item.quantity;
+      return resultProducts;
+    },
   },
   getters: {
     filteredCocktails() {
@@ -57,6 +65,20 @@ export const useProductStore = defineStore("productStore", {
     },
     filteredCocktailsLength() {
       return this.filteredCocktails.length;
+    },
+    calculateSubtotalProducts() {
+      let productSum = 0;
+      this.productCocktail.forEach((product) => {
+        productSum += product[0].price[0] * product[0].quantity;
+      });
+      return productSum;
+    },
+    calucalteSumProducts() {
+      let singleProductSum = 0;
+      this.completePrice.forEach((item) => {
+        singleProductSum += item;
+      });
+      return singleProductSum;
     },
   },
 });
