@@ -9,6 +9,11 @@ export const useProductStore = defineStore("productStore", {
       productCocktail: useStorage("productCocktail", []),
       listSorted: "ascending",
       cselected: "select",
+      selectedDrinkSize: ["Select your Size"],
+      drinkSize: [
+        { id: 1, label: "200 ml", price: 10.0 },
+        { id: 2, label: "400 ml", price: 12.0 },
+      ],
     };
   },
   //actions
@@ -39,6 +44,18 @@ export const useProductStore = defineStore("productStore", {
       let resultProducts = 0;
       resultProducts += item.price[0] * item.quantity;
       return resultProducts;
+    },
+    select(size) {
+      this.selectedDrinkSize.push(size.price);
+      if (this.selectedDrinkSize.length === 2) {
+        return this.selectedDrinkSize.splice(-2, 1);
+      }
+    },
+    initChange() {
+      let initText = "Select your Size";
+      if (this.selectedDrinkSize.length === 0) {
+        this.selectedDrinkSize = initText;
+      }
     },
   },
   getters: {
@@ -75,8 +92,8 @@ export const useProductStore = defineStore("productStore", {
     },
     calucalteSumProducts() {
       let singleProductSum = 0;
-      this.completePrice.forEach((item) => {
-        singleProductSum += item;
+      this.productCocktail.forEach((item) => {
+        singleProductSum += item.price;
       });
       return singleProductSum;
     },
