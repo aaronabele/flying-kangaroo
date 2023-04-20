@@ -49,9 +49,12 @@
                   <input
                     class="input-styling"
                     type="number"
-                    v-model="item[4].totalQuantity"
+                    v-model.number="item[item.length - 1].totalQuantity"
                   />
-                  <button class="btn-delete" @click="deleteItem(index)">
+                  <button
+                    class="btn-delete"
+                    @click="IngredientStore.deleteItem(index)"
+                  >
                     delete
                   </button>
                 </div>
@@ -62,7 +65,7 @@
                       new Intl.NumberFormat("de-DE", {
                         style: "currency",
                         currency: "EUR",
-                      }).format(showSubtotalIngredients(item))
+                      }).format(IngredientStore.showSubtotalIngredients(item))
                     }}</span
                   >
                 </div>
@@ -110,7 +113,7 @@
                           />
                           <button
                             class="btn-delete"
-                            @click="deleteProduct(index)"
+                            @click="ProductStore.deleteProduct(index)"
                           >
                             delete
                           </button>
@@ -121,7 +124,7 @@
                             new Intl.NumberFormat("de-DE", {
                               style: "currency",
                               currency: "EUR",
-                            }).format(showSubtotalProducts(item))
+                            }).format(ProductStore.showSubtotalProducts(item))
                           }}</span
                         >
                       </div>
@@ -165,60 +168,12 @@ export default {
     return { IngredientStore, ProductStore };
   },
   computed: {
-    calculateSum() {
-      let sum = 0;
-      this.IngredientStore.completePrice.forEach((item) => {
-        sum += item;
-      });
-      this.ProductStore.productCocktail.forEach((product) => {
-        product.forEach((productPrice) => {
-          sum += +productPrice.price[0];
-        });
-      });
-      return new Intl.NumberFormat("de-DE", {
-        style: "currency",
-        currency: "EUR",
-      }).format(sum);
-    },
     calculateTotalSum() {
-      let ProductSum = 0;
-      this.ProductStore.productCocktail.forEach((product) => {
-        ProductSum += product[0].price[0] * product[0].quantity;
-      });
-      let Ingredientsum = 0;
-      this.IngredientStore.completeCocktail.forEach((item) => {
-        let lastElement = item[item.length - 1];
-        item.forEach((cocktail) => {
-          Ingredientsum +=
-            cocktail.ingredient.price * lastElement.totalQuantity;
-        });
-      });
+      let ProductSum = this.ProductStore.calculateSubtotalProducts;
+      let Ingredientsum = this.IngredientStore.calculateSubtotalIngredients;
       let totalsum = 0;
       totalsum += ProductSum + Ingredientsum;
       return totalsum;
-    },
-  },
-  methods: {
-    deleteItem(index) {
-      this.IngredientStore.completePrice.splice(index, 1);
-      this.IngredientStore.completeCocktail.splice(index, 1);
-    },
-    deleteProduct(index) {
-      this.ProductStore.productCocktail.splice(index, 1);
-    },
-    showSubtotalIngredients(item) {
-      let resultIngredients = 0;
-      item.forEach((ingredient) => {
-        resultIngredients +=
-          +ingredient.ingredient.price * +ingredient.quantity;
-      });
-      resultIngredients = resultIngredients * item[4].totalQuantity;
-      return resultIngredients;
-    },
-    showSubtotalProducts(item) {
-      let resultProducts = 0;
-      resultProducts += item.price[0] * item.quantity;
-      return resultProducts;
     },
   },
 };
