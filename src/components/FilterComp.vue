@@ -1,25 +1,25 @@
 <template>
   <div class="filter-comp-wrapper">
     <div class="filter-comp-product-length">
-      <span> {{ this.filteredCocktails.length }} products</span>
+      <span> {{ ProductStore.filteredCocktailsLength }} products</span>
     </div>
     <div class="filter-comp-filter-sorting">
       filter &nbsp; &nbsp;
-      <select class="filter-comp-filter" v-model="cselected">
+      <select class="filter-comp-filter" v-model="ProductStore.cselected">
         <option value="select">Select</option>
         <option value="Vodka">Vodka</option>
         <option value="Gin">Gin</option>
         <option value="Rum">Rum</option>
       </select>
       sort by name &nbsp; &nbsp;
-      <select class="filter-comp-sorting" v-model="listSorted">
+      <select class="filter-comp-sorting" v-model="ProductStore.listSorted">
         &nbsp; &nbsp;
         <img
           class="filter-comp-arrow-image"
           src="@/assets/pfeil.png"
           alt="Pfeil icon"
           :class="[
-            this.listSorted === true
+            ProductStore.listSorted === true
               ? 'filter-comp-arrow-image-rotate'
               : 'filter-comp-arrow-image',
           ]"
@@ -33,7 +33,7 @@
     <router-link
       :to="{ name: 'details', params: { id: cocktail.idDrink } }"
       class="filter-comp-single-product-card"
-      v-for="cocktail in filteredCocktails"
+      v-for="cocktail in ProductStore.filteredCocktails"
       :key="cocktail.idDrink"
     >
       <img
@@ -82,36 +82,6 @@ export default {
   },
   components: {
     ThreeColsComp,
-  },
-  data() {
-    return {
-      sourceData: this.ProductStore.products,
-      listSorted: "ascending",
-      cselected: "select",
-    };
-  },
-  computed: {
-    filteredCocktails() {
-      let filteredCocktails = this.sourceData;
-
-      if (this.listSorted !== "select") {
-        filteredCocktails.sort((a, b) => {
-          let aCocktail = a.strDrink.toLowerCase();
-          let bCocktail = b.strDrink.toLowerCase();
-          if (this.listSorted === "ascending") {
-            return aCocktail > bCocktail ? 1 : -1;
-          } else {
-            return aCocktail < bCocktail ? 1 : -1;
-          }
-        });
-      }
-      if (this.cselected !== "select") {
-        filteredCocktails = filteredCocktails.filter((item) => {
-          return item.strIngredient1 === this.cselected;
-        });
-      }
-      return filteredCocktails;
-    },
   },
 };
 </script>
