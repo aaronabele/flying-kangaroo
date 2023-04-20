@@ -3,7 +3,7 @@
     <div class="cocktailmixer-mixer">
       <section class="cocktailmixer-mixer-section">
         <div
-          v-for="cocktailIngredient in cocktail"
+          v-for="cocktailIngredient in IngredientStore.cocktail"
           :key="cocktailIngredient.ingredient.id"
           class="cocktail-mixer-block"
           :style="{
@@ -29,7 +29,7 @@
           <input
             class="checkbox-styling"
             type="checkbox"
-            v-model="nonAlcoholic"
+            v-model="IngredientStore.nonAlcoholic"
           />
           <label> Non-Alcoholic</label>
         </section>
@@ -40,7 +40,7 @@
       <div class="cocktail-mixer-ingridients-wrapper">
         <section
           class="cocktail-mixer-alcoholic-ingridient-section"
-          v-for="(value, key) in filteredIngredients"
+          v-for="(value, key) in IngredientStore.filteredIngredients"
           :key="key"
         >
           <div class="item-header-styling">
@@ -53,7 +53,7 @@
                   class="input-styling"
                   type="text"
                   placeholder="0"
-                  @change="inputQuantityPrice(item, $event)"
+                  @change="IngredientStore.inputQuantityPrice(item, $event)"
                   :id="item.id"
                 />
                 {{ item.price }} € per unit | <b>{{ item.name }}</b>
@@ -67,15 +67,15 @@
           <div class="quantity-area">
             <h3>Quantity:</h3>
             <span class="cocktail-mixer-sum-amount"
-              >{{ cocktail.length }} Ingredients</span
+              >{{ IngredientStore.cocktail.length }} Ingredients</span
             >
             &nbsp;
-            <span> {{ cocktailUnits }} Units</span>
+            <span> {{ IngredientStore.cocktailUnits }} Units</span>
           </div>
           <div class="ingredients-area">
             <h3>Selected:</h3>
             <span class="selected-item-styling">
-              {{ selectedIngredients }}
+              {{ IngredientStore.selectedIngredients }}
             </span>
           </div>
           <div class="sum-area">
@@ -85,12 +85,14 @@
                 new Intl.NumberFormat("de-DE", {
                   style: "currency",
                   currency: "EUR",
-                }).format(cocktailPrice)
+                }).format(IngredientStore.cocktailPrice)
               }}
             </span>
           </div>
         </div>
-        <button class="btn" @click="sendCocktail()">Add to Cart</button>
+        <button class="btn" @click="IngredientStore.isSendingCocktail()">
+          Add to Cart
+        </button>
       </div>
     </div>
   </div>
@@ -103,74 +105,6 @@ export default {
   setup() {
     const IngredientStore = useIngredientStore();
     return { IngredientStore };
-  },
-  data() {
-    return {
-      ingredients: this.IngredientStore.ingredient.ingredients,
-      sum: 0,
-      nonAlcoholic: false,
-      cocktail: [],
-    };
-  },
-  methods: {
-    inputQuantityPrice(item, event) {
-      if (this.cocktail.length < 5) {
-        this.cocktail.push({
-          ingredient: item,
-          quantity: event.target.value,
-          totalQuantity: 1,
-        });
-      } else {
-        event.target.value = "";
-        alert("You have picked the maximum amount of Ingredients");
-      }
-    },
-    handleInput(event) {
-      if (event.target.value < 1) {
-        alert("Please put in a valid Quantity (>= 1)");
-      }
-    },
-    sendCocktail() {
-      this.IngredientStore.sendCocktail(this.cocktail);
-      this.IngredientStore.sendPrice(this.cocktailPrice);
-    },
-  },
-  computed: {
-    cocktailUnits() {
-      let units = 0;
-      this.cocktail.forEach((item) => {
-        units += +item.quantity;
-      });
-      return units;
-    },
-    cocktailPrice() {
-      let sum = 0;
-      this.cocktail.forEach((item) => {
-        sum += item.quantity * item.ingredient.price;
-      });
-      return sum;
-    },
-    selectedIngredients() {
-      return this.cocktail.map((item) => item.ingredient.name).join(", ");
-    },
-    filteredIngredients() {
-      if (this.nonAlcoholic === true) {
-        const copy = {};
-
-        for (let key of Object.keys(this.ingredients)) {
-          const filtered = this.ingredients[key].filter(
-            (item) => item.category === "non-alcoholic"
-          );
-          if (filtered.length > 0) {
-            copy[key] = filtered;
-          }
-        }
-        return copy;
-      } else {
-        // return all ingredient
-        return this.ingredients;
-      }
-    },
   },
 };
 </script>
