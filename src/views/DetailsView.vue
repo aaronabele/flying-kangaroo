@@ -98,7 +98,6 @@ export default {
       .then((response) => response.json())
       .then((data) => (this.sourceData = data.drinks[0]));
   },
-  computed: {},
   methods: {
     select(size) {
       this.selectedDrinkSize.push(size.price);
