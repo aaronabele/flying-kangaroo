@@ -28,12 +28,7 @@
                   <div class="cart-wrapper-styling">
                     {{ ingredient.quantity }}x &nbsp;
                     <div class="cart-price">
-                      {{
-                        new Intl.NumberFormat("de-DE", {
-                          style: "currency",
-                          currency: "EUR",
-                        }).format(ingredient.ingredient.price)
-                      }}
+                      {{ ingredient.ingredient.price }}
                     </div>
                     &nbsp;
                     <div
@@ -51,25 +46,30 @@
               <div class="qty-del-subtotal">
                 <div>
                   <label>Qty&nbsp;&nbsp;</label>
-                  <input class="input-styling" type="number" v-model="qty" />
+                  <input
+                    class="input-styling"
+                    type="number"
+                    v-model="item[4].totalQuantity"
+                  />
                   <button class="btn-delete" @click="deleteItem(index)">
                     delete
                   </button>
                 </div>
                 <div>
-                  <span
-                    >subtotal:
+                  <span>
+                    subtotal:
                     {{
                       new Intl.NumberFormat("de-DE", {
                         style: "currency",
                         currency: "EUR",
-                      }).format(showPrice(item))
+                      }).format(showSubtotalIngredients(item))
                     }}</span
                   >
                 </div>
               </div>
             </div>
           </div>
+
           <div class="product-section">
             <div
               class="single-product"
@@ -90,7 +90,13 @@
                     <div class="product-details-details">
                       <div class="product-details-item">{{ item.name }}</div>
                       <div class="product-details-price">
-                        Price per drink: {{ item.price[0] }}
+                        Price per drink:
+                        {{
+                          new Intl.NumberFormat("de-DE", {
+                            style: "currency",
+                            currency: "EUR",
+                          }).format(item.price[0])
+                        }}
                       </div>
                       <div class="product-details-qty-del-sub">
                         <div>
@@ -110,7 +116,13 @@
                           </button>
                         </div>
                         <span
-                          >subtotal: {{ item.price[0] * item.quantity }}</span
+                          >subtotal:
+                          {{
+                            new Intl.NumberFormat("de-DE", {
+                              style: "currency",
+                              currency: "EUR",
+                            }).format(showSubtotalProducts(item))
+                          }}</span
                         >
                       </div>
                     </div>
@@ -124,7 +136,12 @@
       <div class="cart-section-total-wrapper">
         <div class="section-price-section">
           <span class="cart-section-total">Total</span>
-          <span class="cart-section-sum">{{ calculateSum }}</span>
+          <span class="cart-section-sum">{{
+            new Intl.NumberFormat("de-DE", {
+              style: "currency",
+              currency: "EUR",
+            }).format(calculateTotalSum)
+          }}</span>
         </div>
         <div class="section-btn-section">
           <button class="btn-checkout">Check out</button>
@@ -147,11 +164,6 @@ export default {
     const ProductStore = useProductStore();
     return { IngredientStore, ProductStore };
   },
-  data() {
-    return {
-      qty: 1,
-    };
-  },
   computed: {
     calculateSum() {
       let sum = 0;
@@ -168,6 +180,23 @@ export default {
         currency: "EUR",
       }).format(sum);
     },
+    calculateTotalSum() {
+      let ProductSum = 0;
+      this.ProductStore.productCocktail.forEach((product) => {
+        ProductSum += product[0].price[0] * product[0].quantity;
+      });
+      let Ingredientsum = 0;
+      this.IngredientStore.completeCocktail.forEach((item) => {
+        let lastElement = item[item.length - 1];
+        item.forEach((cocktail) => {
+          Ingredientsum +=
+            cocktail.ingredient.price * lastElement.totalQuantity;
+        });
+      });
+      let totalsum = 0;
+      totalsum += ProductSum + Ingredientsum;
+      return totalsum;
+    },
   },
   methods: {
     deleteItem(index) {
@@ -177,12 +206,19 @@ export default {
     deleteProduct(index) {
       this.ProductStore.productCocktail.splice(index, 1);
     },
-    showPrice(item) {
-      let result = 0;
+    showSubtotalIngredients(item) {
+      let resultIngredients = 0;
       item.forEach((ingredient) => {
-        result += ingredient.ingredient.price * ingredient.quantity;
+        resultIngredients +=
+          +ingredient.ingredient.price * +ingredient.quantity;
       });
-      return result;
+      resultIngredients = resultIngredients * item[4].totalQuantity;
+      return resultIngredients;
+    },
+    showSubtotalProducts(item) {
+      let resultProducts = 0;
+      resultProducts += item.price[0] * item.quantity;
+      return resultProducts;
     },
   },
 };
