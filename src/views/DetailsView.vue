@@ -4,21 +4,35 @@
       <div class="detail-view-image">
         <img
           class="detail-view-image-size"
-          :src="sourceData.strDrinkThumb"
-          :alt="sourceData.strDrink"
+          :src="this.sourceData.strDrinkThumb"
+          :alt="this.sourceData.strDrink"
         />
       </div>
       <div class="detail-view-text">
-        <h2 class="detail-view-text-header">{{ sourceData.strDrink }}</h2>
-        <p class="detail-view-text-instr">{{ sourceData.strInstructions }}</p>
+        <h2 class="detail-view-text-header">
+          {{ sourceData.strDrink }}
+        </h2>
+        <p class="detail-view-text-instr">
+          {{ sourceData.strInstructions }}
+        </p>
         <div class="detail-view-drink-category">
           <span> <b>Category</b> </span>
           <span>{{ sourceData.strCategory }}</span>
         </div>
         <div class="detail-view-drink-price">
           <span> <b> Price</b></span>
-          <span class="prize-span" @change="initChange()"
-            >{{ this.selectedDrinkSize[0] }}
+          <span
+            class="prize-span"
+            v-if="ProductStore.selectedDrinkSize[0] === 'Select your Size'"
+            >Select your Size
+          </span>
+          <span class="prize-span" v-else
+            >{{
+              new Intl.NumberFormat("de-DE", {
+                style: "currency",
+                currency: "EUR",
+              }).format(ProductStore.selectedDrinkSize[0])
+            }}
           </span>
         </div>
         <div class="detail-view-drink-size">
@@ -26,11 +40,11 @@
           <div class="detail-view-drink-size-sizes">
             <span
               class="size-200"
-              v-for="size in drinkSize"
+              v-for="size in ProductStore.drinkSize"
               :key="size"
-              @click="select(size)"
+              @click="ProductStore.select(size)"
               :class="[
-                this.selectedDrinkSize.includes(size.price)
+                ProductStore.selectedDrinkSize.includes(size.price)
                   ? 'btn-selected'
                   : '',
               ]"
@@ -82,11 +96,6 @@ export default {
   data() {
     return {
       sourceData: [],
-      drinkSize: [
-        { id: 1, label: "200 ml", price: 10.0 },
-        { id: 2, label: "400 ml", price: 12.0 },
-      ],
-      selectedDrinkSize: ["Select your Size"],
       cartItems: [],
     };
   },
@@ -99,27 +108,15 @@ export default {
       .then((data) => (this.sourceData = data.drinks[0]));
   },
   methods: {
-    select(size) {
-      this.selectedDrinkSize.push(size.price);
-      if (this.selectedDrinkSize.length === 2) {
-        return this.selectedDrinkSize.splice(-2, 1);
-      }
-    },
-    initChange() {
-      let initText = "Select your Size";
-      if (this.selectedDrinkSize === 0) {
-        this.selectedDrinkSize = initText;
-      }
-    },
     pushItemIntoCartItems() {
-      if (this.selectedDrinkSize[0] === "Select your Size") {
+      if (this.ProductStore.selectedDrinkSize[0] === "Select your Size") {
         alert("Please select a Drink Size");
         return;
       } else {
         this.cartItems.push({
           name: this.sourceData.strDrink,
           pic: this.sourceData.strDrinkThumb,
-          price: this.selectedDrinkSize,
+          price: this.ProductStore.selectedDrinkSize,
           quantity: 1,
         });
         this.ProductStore.sendCocktail(this.cartItems);
