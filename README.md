@@ -69,12 +69,12 @@
 
   3.2.0	Coding
 
-    3.2.1	![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/64px-HTML5_logo_and_wordmark.svg.png) 
+    3.2.1	
     3.2.2	CSS
     3.2.3	Vue.js
     3.2.4	Vite
     3.2.5	Pinia
-    3.2.6 Cypress (E2E Testing)
+    3.2.6   Cypress (E2E Testing)
 
   3.3.0	Client
 
