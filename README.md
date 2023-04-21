@@ -1,62 +1,96 @@
-# flying-kangaroo
+# flying-kangaroo - dont drink and drive, call Kangaroo and fly
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+1. Einleitung
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Dont drink and drive, call Kangaroo and fly. Mit diesen Worten möchte ich den Einstieg in mein Abschlussprojekt machen. Es geht um Cocktails. Genauer gesagt geht es um das Unternehmen Flying Kangaroo, welches während der Corona Pandemie von drei Unternehmern gegründet wurde. Das Konzept der drei Unternehmer beruht darauf Cocktails direkt vor Ort bei den Kunden zu mixen. Das garantiert einen exzellenten Geschmack, frische und Entertainment. Zu Beginn hat Flying Kangaroo die Produkte über Lieferando vertrieben. So konnte mit wenig Aufwand eine hohe Reichweite erzielt werden - allerdings mit zusätzlichen Kosten. Aufgrund der Tatsache, dass sich der Absatz wie geplant gut entwickelt hat, wird nun eine eigene Website implementiert. Das Ziel ist es, u.a. durch geschicktes Marketing (Socialmedia Werbung, Werbung auf den Bechern und Auto) die vorhandenen Kunden auf die eigene Website zu leiten, um so eine höhere Kundenbindung zu generieren und um die zusätzlichen Kosten, die durch Lieferando anfallen zu minimieren. Gerade die Kunden von Flying Kangaroo profitieren vom Umzug auf die eigene Homepage, weil dort die Cocktails zu günstigeren Preisen angeboten werden und es dort die Möglichkeit gibt aus über 20 verschiedenen Zutaten seinen eigenen Cocktail nach Lust und Laune zu kreieren.
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+2. Inhalt der Webb Application
 
-## Project Setup
+  2.1.1	Header für jede Page
+  2.1.2	Footer für jede Page
 
-```sh
-npm install
-```
+  2.2.0	Home
 
-### Compile and Hot-Reload for Development
+    2.2.1	Es wird eine „Home“ Seite geben auf den allgemeinen Informationen über die Produkte stehen. Es wird ein Banner mit einem Bild einer                     Überschrift und einer kurzen Beschreibung geben. Hier kann Flying Kangaroo nach Bedarf den neusten Cocktail präsentieren, Rabatt Aktionen               aufzeigen oder andere relevante Informationen für die Kunden bereitstellen
 
-```sh
-npm run dev
-```
+    2.2.2	Danach folgt eine Tabelle mit zwei Spalten und einer Zeile. Die Kunden bzw. Interessenten können hier wählen, ob sie sich die „Cocktail                 Collection“ (Eine Zusammenstellung aus bekannten Cocktails) oder den „Cocktail-Mixer“ anschauen möchten. Produkte in beiden Kategorien können           bestellt werden
 
-### Compile and Minify for Production
+    2.2.3	Weitere Informationen über die Produkte, wie z.B. die Herkunft der Zutaten (Bio, regional), Nachhaltigkeit (… der Zutaten, Transport,                   Wohltätigkeit) und wenig Zuckergehalt o.Ä. werden in einer weiteren Tabelle aufgeführt
 
-```sh
-npm run build
-```
+    2.2.4	Im Anschluss daran folgt eine Diashow, die aus einem Textbereich und einem Bildbereich besteht. Hier werden drei Cocktails gezeigt. Der                 Textbereich enthält einen „Buy now“ Button
 
-### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
+    2.2.5	Top 5 Top Sellers werden danach aufgeführt. Es ist jeweils ein Bild zu sehen, der Name des Drinks und der Preis
 
-```sh
-npm run test:unit:dev # or `npm run test:unit` for headless testing
-```
+    2.2.6	Eine Art Gruß folgt zum Schluss – sowas wie Enjoy your Drinks
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
-```sh
-npm run test:e2e:dev
-```
+  2.3.0	Cocktails
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+    2.3.1	Ein Banner ist enthalten. Es sind mehrere Leute zu sehen, sodass Geselligkeit suggeriert wird
+    
+    2.3.2	Eine gewisse Anzahl von Cocktails werden per Productcard dargestellt. Inhalt einer Card: Bild, Name des Cocktails, Preis, drei Hauptzutaten:             Alkoholart, zwei weitere charakteristische Zutaten
+    
+    2.3.3	 Es werden dieselben Informationen wie aus 2.1.3 unter den Productcards aufgeführt
+    
+    2.3.4	Jeder Cocktail hat eine Detailseite
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+  2.4.0	Detailseiten
 
-```sh
-npm run build
-npm run test:e2e
-```
+    2.4.1	Informationen: Bilder, Name, Geschmacksnoten, Alkoholgehalt, Zutaten, größe des Drinks
+    
+    2.4.2	Review Sektion
 
-### Lint with [ESLint](https://eslint.org/)
+  2.5.0	Cocktail-Mixer
 
-```sh
-npm run lint
-```
+    2.5.1	Es ist eine Liste aus über 20 Zutaten zu sehen, woraus der Kunde per Klick wählen kann. Es können bis zu 5 Zutaten ausgewählt werden. Außerdem           kann gewählt werden, ob der Cocktail alkoholfrei, mit Alkohol oder mit einem extra Schuss Alkohol sein soll.
+    
+    2.5.2	Die Zutaten die gewählt wurden, erscheinen in einem Cocktailglas, welches neben der Liste platziert ist. So sieht der Kunde alle Zutaten im             Glas.
+    
+    2.5.3	„Add to Cart“ Button
 
-## Icons by:
+    2.6.0	About Us
+
+    2.6.1	Auf der About Us Seite wird es Beispeiltext mit Beispielfotos der Gründer geben.  Im prinzip generelle Informationen über die Gründung, zu den           Personen und den Beweggründen.
+
+2.7.0	Contact
+
+    2.7.1	Seite die ein Kontaktformular enthält
+
+
+3.	Tech Stack 
+
+    3.1.0	API
+
+      3.1.1	Es wird die [TheCocktailDB](https://www.thecocktaildb.com/api.php) verwendet. Dies ist eine DB, die über 635 Drinks, 489 Zutaten und 635                 Bilder enthält.
+      
+      3.1.2 Für den Cocktail-Mixer wurden JSON Daten erzeugt die als Basis dienen. Diese Daten sind in der db.json Datei abgelegt.
+
+  3.2.0	Coding
+
+    3.2.1	HTML
+    3.2.2	CSS
+    3.2.3	Vue.js
+    3.2.4	Vite
+    3.2.5	Pinia
+    3.2.6 Cypress (E2E Testing)
+
+  3.3.0	Client
+
+    3.3.1	Google Chrome
+
+  3.4.0	Testing
+
+    3.4.1	Cypress (Cocktail-Mixer)
+
+4.	Zusammenfassung
+Mit Hilfe moderner Webtechnologien wird eine elegante und freundliche Web App geschaffen, die Flying Kangaroo dabei hilft, die Ziele zu erreichen. Die Produkte werden so in Szene gesetzt, dass sie den Kunden bzw. Interessenten dazu animieren, die Produkte zu kaufen. Ein besonderer Augenmerk wird auf den Cocktail-Mixer gesetzt. Er stellt das Herzstück der Web App dar und bietet mit seinen vielfältigen Auswahlmöglichkeiten, genau das, was anspruchsvolle Kunden in der heutigen Zeit benötigen.
+![image](https://user-images.githubusercontent.com/115553180/233585778-2b784c1d-20b2-43cc-8499-cbca8ef836e7.png)
+
+
+
+## Quellen:
 
 <a target="_blank" href="https://icons8.com/icon/132/suche">Suche</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
