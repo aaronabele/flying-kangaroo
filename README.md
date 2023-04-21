@@ -8,81 +8,82 @@
 
 2. Inhalt der Webb Application
 
-  2.1.1	Header für jede Page
-  2.1.2	Footer für jede Page
+..2.1.1	Header für jede Page
+..2.1.2	Footer für jede Page
 
-  2.2.0	Home
+..2.2.0	Home
 
-    2.2.1	Es wird eine „Home“ Seite geben auf den allgemeinen Informationen über die Produkte stehen. Es wird ein Banner mit einem Bild einer                     Überschrift und einer kurzen Beschreibung geben. Hier kann Flying Kangaroo nach Bedarf den neusten Cocktail präsentieren, Rabatt Aktionen               aufzeigen oder andere relevante Informationen für die Kunden bereitstellen
+....2.2.1	Es wird eine „Home“ Seite geben auf den allgemeinen Informationen über die Produkte stehen. Es wird ein Banner mit einem Bild einer                     Überschrift und einer kurzen Beschreibung geben. Hier kann Flying Kangaroo nach Bedarf den neusten Cocktail präsentieren, Rabatt Aktionen               aufzeigen oder andere relevante Informationen für die Kunden bereitstellen
 
-    2.2.2	Danach folgt eine Tabelle mit zwei Spalten und einer Zeile. Die Kunden bzw. Interessenten können hier wählen, ob sie sich die „Cocktail                 Collection“ (Eine Zusammenstellung aus bekannten Cocktails) oder den „Cocktail-Mixer“ anschauen möchten. Produkte in beiden Kategorien können           bestellt werden
+....2.2.2	Danach folgt eine Tabelle mit zwei Spalten und einer Zeile. Die Kunden bzw. Interessenten können hier wählen, ob sie sich die „Cocktail                 Collection“ (Eine Zusammenstellung aus bekannten Cocktails) oder den „Cocktail-Mixer“ anschauen möchten. Produkte in beiden Kategorien    ............können bestellt werden
 
-    2.2.3	Weitere Informationen über die Produkte, wie z.B. die Herkunft der Zutaten (Bio, regional), Nachhaltigkeit (… der Zutaten, Transport,                   Wohltätigkeit) und wenig Zuckergehalt o.Ä. werden in einer weiteren Tabelle aufgeführt
+....2.2.3	Weitere Informationen über die Produkte, wie z.B. die Herkunft der Zutaten (Bio, regional), Nachhaltigkeit (… der Zutaten, Transport,                   Wohltätigkeit) und wenig Zuckergehalt o.Ä. werden in einer weiteren Tabelle aufgeführt
 
-    2.2.4	Im Anschluss daran folgt eine Diashow, die aus einem Textbereich und einem Bildbereich besteht. Hier werden drei Cocktails gezeigt. Der                 Textbereich enthält einen „Buy now“ Button
+....2.2.4	Im Anschluss daran folgt eine Diashow, die aus einem Textbereich und einem Bildbereich besteht. Hier werden drei Cocktails gezeigt. Der                 Textbereich enthält einen „Buy now“ Button
 
-    2.2.5	Top 5 Top Sellers werden danach aufgeführt. Es ist jeweils ein Bild zu sehen, der Name des Drinks und der Preis
+....2.2.5	Top 5 Top Sellers werden danach aufgeführt. Es ist jeweils ein Bild zu sehen, der Name des Drinks und der Preis
 
-    2.2.6	Eine Art Gruß folgt zum Schluss – sowas wie Enjoy your Drinks
+....2.2.6	Eine Art Gruß folgt zum Schluss – sowas wie Enjoy your Drinks
 
 
-  2.3.0	Cocktails
+..2.3.0	Cocktails
 
-    2.3.1	Ein Banner ist enthalten. Es sind mehrere Leute zu sehen, sodass Geselligkeit suggeriert wird
+....2.3.1	Ein Banner ist enthalten. Es sind mehrere Leute zu sehen, sodass Geselligkeit suggeriert wird
     
-    2.3.2	Eine gewisse Anzahl von Cocktails werden per Productcard dargestellt. Inhalt einer Card: Bild, Name des Cocktails, Preis, drei Hauptzutaten:             Alkoholart, zwei weitere charakteristische Zutaten
+....2.3.2	Eine gewisse Anzahl von Cocktails werden per Productcard dargestellt. Inhalt einer Card: Bild, Name des Cocktails, Preis, drei Hauptzutaten:             Alkoholart, zwei weitere charakteristische Zutaten
     
-    2.3.3	 Es werden dieselben Informationen wie aus 2.1.3 unter den Productcards aufgeführt
+....2.3.3	 Es werden dieselben Informationen wie aus 2.1.3 unter den Productcards aufgeführt
     
-    2.3.4	Jeder Cocktail hat eine Detailseite
+....2.3.4	Jeder Cocktail hat eine Detailseite
 
-  2.4.0	Detailseiten
+..2.4.0	Detailseiten
 
-    2.4.1	Informationen: Bilder, Name, Geschmacksnoten, Alkoholgehalt, Zutaten, größe des Drinks
+....2.4.1	Informationen: Bilder, Name, Geschmacksnoten, Alkoholgehalt, Zutaten, größe des Drinks
     
-    2.4.2	Review Sektion
+....2.4.2	Review Sektion
 
-  2.5.0	Cocktail-Mixer
 
-    2.5.1	Es ist eine Liste aus über 20 Zutaten zu sehen, woraus der Kunde per Klick wählen kann. Es können bis zu 5 Zutaten ausgewählt werden. Außerdem           kann gewählt werden, ob der Cocktail alkoholfrei, mit Alkohol oder mit einem extra Schuss Alkohol sein soll.
+..2.5.0	Cocktail-Mixer
+
+....2.5.1	Es ist eine Liste aus über 20 Zutaten zu sehen, woraus der Kunde per Klick wählen kann. Es können bis zu 5 Zutaten ausgewählt werden. ............Außerdem kann gewählt werden, ob der Cocktail alkoholfrei, mit Alkohol oder mit einem extra Schuss Alkohol sein soll.
     
-    2.5.2	Die Zutaten die gewählt wurden, erscheinen in einem Cocktailglas, welches neben der Liste platziert ist. So sieht der Kunde alle Zutaten im             Glas.
+....2.5.2	Die Zutaten die gewählt wurden, erscheinen in einem Cocktailglas, welches neben der Liste platziert ist. So sieht der Kunde alle Zutaten im             Glas.
     
-    2.5.3	„Add to Cart“ Button
+....2.5.3	„Add to Cart“ Button
 
-    2.6.0	About Us
+....2.6.0	About Us
 
-    2.6.1	Auf der About Us Seite wird es Beispeiltext mit Beispielfotos der Gründer geben.  Im prinzip generelle Informationen über die Gründung, zu den           Personen und den Beweggründen.
+....2.6.1	Auf der About Us Seite wird es Beispeiltext mit Beispielfotos der Gründer geben.  Im prinzip generelle Informationen über die Gründung, zu ............den Personen und den Beweggründen.
 
-2.7.0	Contact
+..2.7.0	Contact
 
-    2.7.1	Seite die ein Kontaktformular enthält
+....2.7.1	Seite die ein Kontaktformular enthält
 
 
 3.	Tech Stack 
 
-    3.1.0	API
+..3.1.0	API
 
-      3.1.1	Es wird die [TheCocktailDB](https://www.thecocktaildb.com/api.php) verwendet. Dies ist eine DB, die über 635 Drinks, 489 Zutaten und 635                 Bilder enthält.
+....3.1.1	Es wird die [TheCocktailDB](https://www.thecocktaildb.com/api.php) verwendet. Dies ist eine DB, die über 635 Drinks, 489 Zutaten und 635                 Bilder enthält.
       
-      3.1.2 Für den Cocktail-Mixer wurden JSON Daten erzeugt die als Basis dienen. Diese Daten sind in der db.json Datei abgelegt.
+....3.1.2 ..Für den Cocktail-Mixer wurden JSON Daten erzeugt die als Basis dienen. Diese Daten sind in der db.json Datei abgelegt.
 
-  3.2.0	Coding
+..3.2.0	Coding
 
-    3.2.1	HTML
-    3.2.2	CSS
-    3.2.3	Vue.js
-    3.2.4	Vite
-    3.2.5	Pinia
-    3.2.6   Cypress (E2E Testing)
+....3.2.1	HTML
+....3.2.2	CSS
+....3.2.3	Vue.js
+....3.2.4	Vite
+....3.2.5	Pinia
+....3.2.6   Cypress (E2E Testing)
 
-  3.3.0	Client
+..3.3.0	Client
 
-    3.3.1	Google Chrome
+....3.3.1	Google Chrome
 
-  3.4.0	Testing
+..3.4.0	Testing
 
-    3.4.1	Cypress (Cocktail-Mixer)
+....3.4.1	Cypress (Cocktail-Mixer)
 
 4.	Zusammenfassung
 
