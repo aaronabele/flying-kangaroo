@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 .banner-comp-cocktails-comp {
-  height: 400px;
+  height: var(--banner-height);
   width: 100%;
   margin-bottom: 4rem;
 }
@@ -43,10 +43,10 @@ export default {
 .about-comp-main-header {
   position: absolute;
   text-align: center;
-  font-size: 52px;
+  font-size: 3.5rem;
   padding: 1rem 0;
-  font-family: "Montserrat Alternates", sans-serif;
-  color: white;
+  font-family: var(--primary-font-family);
+  color: var(--secondary-color);
   text-shadow: 5px 5px silver;
   bottom: -40px;
   left: 350px;

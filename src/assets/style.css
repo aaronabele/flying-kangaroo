@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+/* Font classes */
+html {
+  --primary-font-family: "Montserrat Alternates", sans-serif;
+
+  --primary-color: black;
+
+  --secondary-font-family: "Kaushan Script", sans-serif;
+
+  --secondary-color: white;
+
+  --primary-secondary-font-size: 1rem;
+
+  /* Background classes */
+
+  --primary-background-color: #2a363c;
+
+  --secondary-background-color: black;
+
+  --third-background-color: lightgray;
+
+  --white-background-color: white;
+
+  --single-card-background-color: rgb(240, 240, 240);
+
+  --footer-background-color: #f2f2f2;
+
+  /* Classes for Sizing the components */
+
+  --general-width: 1200px;
+
+  /* Banner Sizing */
+
+  --banner-height: 400px;
+}

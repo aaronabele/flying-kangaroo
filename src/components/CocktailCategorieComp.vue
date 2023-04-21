@@ -75,11 +75,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 .cocktail-category-section {
-  width: 1200px;
+  width: var(--general-width);
   height: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -102,45 +99,45 @@ export default {
   left: 40px;
   bottom: 250px;
   width: 15ch;
-  font-size: 48px;
-  font-family: "Montserrat Alternates", sans-serif;
-  color: white;
+  font-size: 3rem;
+  font-family: var(--primary-font-family);
+  color: var(--secondary-color);
   text-align: right;
 }
 
 .cocktail-category-router-link {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   position: absolute;
   left: 370px;
   bottom: 170px;
   border-radius: 15px;
   padding: 1rem 1.5rem;
   text-decoration: none;
-  color: black;
-  background-color: white;
-  font-size: 18px;
+  color: var(--primary-color);
+  background-color: var(--white-background-color);
+  font-size: 1.3rem;
 }
 .cocktail-category-text-mixer {
   position: absolute;
   right: 140px;
   bottom: 250px;
   width: 12ch;
-  font-size: 48px;
-  font-family: "Montserrat Alternates", sans-serif;
-  color: white;
+  font-size: 3rem;
+  font-family: var(--primary-font-family);
+  color: var(--secondary-color);
 }
 
 .cocktail-category-router-link-mixer {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   position: absolute;
   right: 370px;
   bottom: 170px;
   border-radius: 15px;
   padding: 1rem 1.5rem;
   text-decoration: none;
-  color: black;
-  background-color: white;
-  font-size: 18px;
+  color: var(--primary-color);
+  background-color: var(--white-background-color);
+  font-size: 1.2rem;
 }
 
 .cocktail-category-text-area-wrapper {
@@ -152,15 +149,15 @@ export default {
 }
 
 .cocktail-category-collection-header {
-  font-size: 36px;
-  font-family: "Kaushan Script", cursive;
+  font-size: 2.5rem;
+  font-family: var(--secondary-font-family);
   margin: 0 0;
   margin-top: 0.5rem;
 }
 
 .cocktail-category-collection-text {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 16px;
+  font-family: var(--primary-font-family);
+  font-size: 1.1rem;
   width: 50ch;
   height: 60px;
   margin-left: auto;
@@ -168,13 +165,13 @@ export default {
 }
 
 .cocktail-category-colelction-mixer-btn {
-  font-family: "Montserrat Alternates", sans-serif;
-  background-color: white;
+  font-family: var(--primary-font-family);
+  background-color: var(--white-background-color);
   padding: 0.5rem 1rem;
   border-radius: 15px;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: var(--primary-color);
   border: 2px solid black;
   border-radius: 15px;
 }

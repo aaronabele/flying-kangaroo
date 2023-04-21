@@ -17,18 +17,12 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .site-seperator-wrapper {
   height: 21rem;
-  background-color: #2a363c;
+  background-color: var(--primary-background-color);
   margin-bottom: 4rem;
-  color: white;
+  color: var(--secondary-color);
   position: relative;
 }
 
@@ -39,12 +33,12 @@ export default {};
 }
 
 .site-seperator-header {
-  font-family: "Kaushan Script", cursive;
-  font-size: 48px;
+  font-family: var(--secondary-font-family);
+  font-size: 3rem;
 }
 
 .site-seperator-text {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   margin-left: auto;
   margin-right: auto;
   width: 60ch;
@@ -58,14 +52,14 @@ export default {};
 }
 
 .site-seperator-raute1 {
-  outline: 1px solid white;
+  outline: 1px solid var(--secondary-color);
   width: 25px;
   height: 25px;
   rotate: 45deg;
 }
 
 .site-seperator-raute2 {
-  outline: 1px solid white;
+  outline: 1px solid var(--secondary-color);
   width: 25px;
   height: 25px;
   rotate: 45deg;

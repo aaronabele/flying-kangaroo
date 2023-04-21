@@ -10,12 +10,7 @@
   </section>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .section-banner {
   width: 100%;
   height: 620px;
@@ -42,31 +37,30 @@ export default {};
   left: 120px;
   color: #fff;
   text-shadow: 5px 5px silver;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 52px;
+  font-family: var(--primary-font-family);
+  font-size: 3.5rem;
 }
 
 .banner-text-description {
   position: absolute;
-  top: 130px;
+  top: 135px;
   left: 120px;
-  color: #fff;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 28px;
+  color: var(--secondary-color);
+  font-family: var(--primary-font-family);
+  font-size: 1.8rem;
 }
 
 .banner-button {
   position: absolute;
   top: 180px;
   left: 120px;
-  color: black;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   border: none;
   border-radius: 15px;
   padding: 0.5rem 1rem;
-  background-color: #fff;
-  font-size: 18px;
+  background-color: var(--white-background-color);
+  font-size: 1.3rem;
   text-decoration: none;
-  color: black;
+  color: var(--primary-color);
 }
 </style>
