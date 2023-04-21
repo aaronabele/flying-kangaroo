@@ -36,27 +36,20 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 .three-cols-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1200px;
+  width: var(--general-width);
   height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;
+  border-bottom: 1px solid var(--third-background-color);
+  border-top: 1px solid var(--third-background-color);
 }
 
 .three-cols-first-one,
@@ -68,14 +61,14 @@ export default {};
 .three-cols-first-header,
 .three-cols-second-header,
 .three-cols-third-header {
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
 }
 
 .three-cols-first-text,
 .three-cols-second-text,
 .three-cols-third-text {
   width: 35ch;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 .three-cols-image {

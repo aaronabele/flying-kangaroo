@@ -87,12 +87,9 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 .filter-comp-wrapper {
-  font-family: "Montserrat Alternates", sans-serif;
-  width: 1200px;
+  font-family: var(--primary-font-family);
+  width: var(--general-width);
   height: 40px;
   margin-left: auto;
   margin-right: auto;
@@ -100,21 +97,21 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid var(--third-background-color);
 }
 
 .filter-comp-sorting {
   cursor: pointer;
 }
 .filter-comp-single-product-header {
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
   margin: 0 0;
   padding-top: 0.5rem;
   padding-bottom: 0.2rem;
 }
 
 .filter-comp-product-card-wrapper {
-  width: 1200px;
+  width: var(--general-width);
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -144,14 +141,14 @@ export default {
 .filter-comp-single-product-card {
   width: 290px;
   height: auto;
-  background-color: rgb(240, 240, 240);
+  background-color: var(--single-card-background-color);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: black;
+  color: var(--primary-color);
 }
 
 .filter-comp-single-product-card-img {
@@ -181,26 +178,26 @@ export default {
 }
 
 .filter-comp-single-product-ingridient {
-  font-family: "Montserrat Alternates", sans-serif;
-  color: black;
+  font-family: var(--primary-font-family);
+  color: var(--primary-color);
   padding-bottom: 0.2rem;
 }
 
 .filter-comp-single-product-alcohol {
-  font-family: "Montserrat Alternates", sans-serif;
-  color: black;
+  font-family: var(--primary-font-family);
+  color: var(--primary-color);
   padding-top: 1rem;
 }
 
 .filter-comp-single-product-price {
-  font-family: "Montserrat Alternates", sans-serif;
-  color: black;
+  font-family: var(--primary-font-family);
+  color: var(--primary-color);
   padding-top: 1rem;
 }
 
 .filter-comp-sorting-reset {
-  font-family: "Montserrat Alternates", sans-serif;
-  color: black;
+  font-family: var(--primary-font-family);
+  color: var(--primary-color);
   padding-top: 1rem;
   margin-left: 2rem;
   cursor: pointer;

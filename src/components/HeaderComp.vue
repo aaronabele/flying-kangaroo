@@ -73,38 +73,35 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 #header {
   width: 100%;
 }
 
 nav {
-  background-color: #2a363c;
+  background-color: var(--primary-background-color);
   height: 6rem;
 }
 
 nav a {
-  color: white;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 .header-comp-navigation-delivery {
-  color: white;
+  color: var(--secondary-color);
   font-weight: 100;
-  font-family: "Montserrat Alternates", sans-serif;
-  background-color: black;
+  font-family: var(--primary-font-family);
+  background-color: var(--secondary-background-color);
   height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 nav a.router-link-exact-active {
   text-decoration: none;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: bold;
 }
 
@@ -122,25 +119,25 @@ nav a.router-link-exact-active {
   align-items: center;
   margin: 0 0;
   padding: 1rem;
-  width: 1200px;
+  width: var(--general-width);
   margin-left: auto;
   margin-right: auto;
 }
 
 .header-comp-navigation-ul-li {
   list-style-type: none;
-  color: white;
+  color: var(--secondary-color);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 100;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 .header-comp-navigation-ul-li:after {
   display: block;
   content: "";
-  border-bottom: solid 2px #fff;
+  border-bottom: solid 2px var(--secondary-color);
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
@@ -151,12 +148,12 @@ nav a.router-link-exact-active {
 
 .header-comp-navigation-ul-li-company {
   list-style-type: none;
-  color: white;
+  color: var(--secondary-color);
   letter-spacing: 0.2em;
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
   font-weight: bold;
   text-transform: lowercase;
-  font-size: 20px;
+  font-size: 1.3rem;
   padding-bottom: 0.5rem;
 }
 </style>

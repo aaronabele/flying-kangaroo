@@ -110,9 +110,6 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 .cocktailmixer-wrapper {
   display: grid;
   grid-template-columns: 2fr 1.5fr;
@@ -140,15 +137,15 @@ export default {
   text-align: center;
   font-size: 52px;
   padding: 1rem 0;
-  font-family: "Montserrat Alternates", sans-serif;
-  color: white;
+  font-family: var(--primary-font-family);
+  color: var(--secondary-color);
   text-shadow: 5px 5px silver;
   bottom: -40px;
   left: 350px;
 }
 
 .cocktailmixer-wrapper {
-  width: 1200px;
+  width: var(--general-width);
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -204,7 +201,7 @@ export default {
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   padding: 1rem;
 }
 
@@ -239,14 +236,14 @@ export default {
   flex-direction: column;
   width: 800px;
   height: auto;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 .cocktail-mixer-alc-nonalc-header {
   text-align: center;
-  font-family: "Kaushan Script", cursive;
-  background-color: #2a363c;
-  color: white;
+  font-family: var(--secondary-font-family);
+  background-color: var(--primary-background-color);
+  color: var(--secondary-color);
   padding: 3rem 0rem;
 }
 
@@ -255,7 +252,7 @@ export default {
   justify-content: flex-start;
   align-items: center;
   padding: 0rem 1rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid var(--third-background-color);
 }
 
 .cocktailmixer-sum-area {
@@ -264,12 +261,12 @@ export default {
   align-items: center;
   flex-direction: column;
   padding: 1rem 1rem;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 .cocktail-mixer-sum-amount {
   margin-left: 2rem;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 
@@ -294,7 +291,7 @@ export default {
   height: 3rem;
   border: none;
   background-color: rgb(26, 26, 81);
-  color: white;
+  color: var(--secondary-color);
   margin: 1rem 0rem;
   cursor: pointer;
 }

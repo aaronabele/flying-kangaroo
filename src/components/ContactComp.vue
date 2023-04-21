@@ -45,16 +45,10 @@
     </div>
   </div>
 </template>
-<script>
-export default {};
-</script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 .contact-wrapper {
-  width: 1200px;
+  width: var(--general-width);
   margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
@@ -65,30 +59,30 @@ export default {};
 }
 
 .contact-block-header {
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
 }
 
 .contact-block-text {
   margin-left: auto;
   margin-right: auto;
   width: 75ch;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 .contact-block-hashtag {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 .contact-area-header {
   text-align: center;
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
   font-size: 36px;
 }
 .contact-area-wrapper {
   width: 100%;
   height: 450px;
   background-color: #2a363c;
-  color: white;
-  font-family: "Montserrat Alternates", sans-serif;
+  color: var(--secondary-color);
+  font-family: var(--primary-font-family);
   margin-bottom: 4rem;
 }
 

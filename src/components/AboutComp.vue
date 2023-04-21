@@ -52,31 +52,29 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .about-comp-wrapper {
-  width: 1200px;
+  width: var(--general-width);
   margin-left: auto;
   margin-right: auto;
 }
 
 .about-comp-main-header {
   text-align: center;
-  font-size: 52px;
+  font-size: 4.5rem;
   padding: 1rem 0;
-  font-family: "Montserrat Alternates", sans-serif;
-  color: white;
+  font-family: var(--primary-font-family);
+  color: var(--secondary-color);
   text-shadow: 5px 5px silver;
-  margin-top: 90px;
-  margin-left: 80px;
+  margin-top: 6rem;
+  margin-left: 1em;
 }
 .about-comp-image-founder {
-  height: 400px;
+  height: var(--banner-height);
   margin-right: 4rem;
 }
 
 .about-comp-image-cofounder {
-  height: 400px;
+  height: var(--banner-height);
   margin-left: 4rem;
 }
 
@@ -86,7 +84,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   margin-top: 2rem;
-  background-color: lightgray;
+  background-color: var(--third-background-color);
   padding: 2rem;
   border-radius: 15px;
 }
@@ -97,13 +95,13 @@ export default {
 
 .about-comp-founder-name {
   font-size: 32px;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   text-decoration: underline;
 }
 .about-comp-text {
   width: 40ch;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 16px;
+  font-family: var(--primary-font-family);
+  font-size: 1.2rem;
 }
 
 .banner-wrapper {
