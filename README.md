@@ -1,9 +1,9 @@
-# flying-kangaroo - dont drink and drive, call Kangaroo and fly
+# flying-kangaroo
 
 
 1. Einleitung
 
-Dont drink and drive, call Kangaroo and fly. Mit diesen Worten möchte ich den Einstieg in mein Abschlussprojekt machen. Es geht um Cocktails. Genauer gesagt geht es um das Unternehmen Flying Kangaroo, welches während der Corona Pandemie von drei Unternehmern gegründet wurde. Das Konzept der drei Unternehmer beruht darauf Cocktails direkt vor Ort bei den Kunden zu mixen. Das garantiert einen exzellenten Geschmack, frische und Entertainment. Zu Beginn hat Flying Kangaroo die Produkte über Lieferando vertrieben. So konnte mit wenig Aufwand eine hohe Reichweite erzielt werden - allerdings mit zusätzlichen Kosten. Aufgrund der Tatsache, dass sich der Absatz wie geplant gut entwickelt hat, wird nun eine eigene Website implementiert. Das Ziel ist es, u.a. durch geschicktes Marketing (Socialmedia Werbung, Werbung auf den Bechern und Auto) die vorhandenen Kunden auf die eigene Website zu leiten, um so eine höhere Kundenbindung zu generieren und um die zusätzlichen Kosten, die durch Lieferando anfallen zu minimieren. Gerade die Kunden von Flying Kangaroo profitieren vom Umzug auf die eigene Homepage, weil dort die Cocktails zu günstigeren Preisen angeboten werden und es dort die Möglichkeit gibt aus über 20 verschiedenen Zutaten seinen eigenen Cocktail nach Lust und Laune zu kreieren.
+   Dont drink and drive, call Kangaroo and fly. Mit diesen Worten möchte ich den Einstieg in mein Abschlussprojekt machen. Es geht um Cocktails. Genauer    gesagt geht es um das Unternehmen Flying Kangaroo, welches während der Corona Pandemie von drei Unternehmern gegründet wurde. Das Konzept der drei      Unternehmer beruht darauf Cocktails direkt vor Ort bei den Kunden zu mixen. Das garantiert einen exzellenten Geschmack, frische und Entertainment. Zu    Beginn hat Flying Kangaroo die Produkte über Lieferando vertrieben. So konnte mit wenig Aufwand eine hohe Reichweite erzielt werden - allerdings mit    zusätzlichen Kosten. Aufgrund der Tatsache, dass sich der Absatz wie geplant gut entwickelt hat, wird nun eine eigene Website implementiert. Das Ziel    ist es, u.a. durch geschicktes Marketing (Socialmedia Werbung, Werbung auf den Bechern und Auto) die vorhandenen Kunden auf die eigene Website zu        leiten, um so eine höhere Kundenbindung zu generieren und um die zusätzlichen Kosten, die durch Lieferando anfallen zu minimieren. Gerade die Kunden    von Flying Kangaroo profitieren vom Umzug auf die eigene Homepage, weil dort die Cocktails zu günstigeren Preisen angeboten werden und es dort die      Möglichkeit gibt aus über 20 verschiedenen Zutaten seinen eigenen Cocktail nach Lust und Laune zu kreieren.
 
 
 2. Inhalt der Webb Application
@@ -69,7 +69,7 @@ Dont drink and drive, call Kangaroo and fly. Mit diesen Worten möchte ich den E
 
   3.2.0	Coding
 
-    3.2.1	HTML
+    3.2.1	![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/64px-HTML5_logo_and_wordmark.svg.png) 
     3.2.2	CSS
     3.2.3	Vue.js
     3.2.4	Vite
@@ -85,8 +85,8 @@ Dont drink and drive, call Kangaroo and fly. Mit diesen Worten möchte ich den E
     3.4.1	Cypress (Cocktail-Mixer)
 
 4.	Zusammenfassung
-Mit Hilfe moderner Webtechnologien wird eine elegante und freundliche Web App geschaffen, die Flying Kangaroo dabei hilft, die Ziele zu erreichen. Die Produkte werden so in Szene gesetzt, dass sie den Kunden bzw. Interessenten dazu animieren, die Produkte zu kaufen. Ein besonderer Augenmerk wird auf den Cocktail-Mixer gesetzt. Er stellt das Herzstück der Web App dar und bietet mit seinen vielfältigen Auswahlmöglichkeiten, genau das, was anspruchsvolle Kunden in der heutigen Zeit benötigen.
-![image](https://user-images.githubusercontent.com/115553180/233585778-2b784c1d-20b2-43cc-8499-cbca8ef836e7.png)
+
+    Mit Hilfe moderner Webtechnologien wird eine elegante und freundliche Web App geschaffen, die Flying Kangaroo dabei hilft, die Ziele zu erreichen.       Die Produkte werden so in Szene gesetzt, dass sie den Kunden bzw. Interessenten dazu animieren, die Produkte zu kaufen. Ein besonderer Augenmerk         wird auf den Cocktail-Mixer gesetzt. Er stellt das Herzstück der Web App dar und bietet mit seinen vielfältigen Auswahlmöglichkeiten, genau das, was     anspruchsvolle Kunden in der heutigen Zeit benötigen.
 
 
 
