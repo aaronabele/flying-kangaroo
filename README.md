@@ -69,7 +69,7 @@
 
   3.2.0	Coding
 
-    3.2.1	
+    3.2.1	HTML
     3.2.2	CSS
     3.2.3	Vue.js
     3.2.4	Vite
