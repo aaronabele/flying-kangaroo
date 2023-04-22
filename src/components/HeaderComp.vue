@@ -39,6 +39,7 @@
               <img
                 src="@/assets/einkaufstasche.png"
                 alt="Einkaufstasche weiß"
+                class="cart-class"
               />
 
               {{ showCartLength }}
