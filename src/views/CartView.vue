@@ -53,11 +53,13 @@
                   <label>Qty&nbsp;&nbsp;</label>
                   <input
                     class="input-styling"
+                    data-cy="drink-quantity"
                     type="number"
                     v-model.number="item[item.length - 1].totalQuantity"
                   />
                   <button
                     class="btn-delete"
+                    data-cy="delete-item-btn"
                     @click="IngredientStore.deleteItem(index)"
                   >
                     delete
@@ -66,12 +68,14 @@
                 <div>
                   <span>
                     subtotal:
-                    {{
-                      new Intl.NumberFormat("de-DE", {
-                        style: "currency",
-                        currency: "EUR",
-                      }).format(IngredientStore.showSubtotalIngredients(item))
-                    }}</span
+                    <span data-cy="subtotal-of-a-drink">
+                      {{
+                        new Intl.NumberFormat("de-DE", {
+                          style: "currency",
+                          currency: "EUR",
+                        }).format(IngredientStore.showSubtotalIngredients(item))
+                      }}</span
+                    ></span
                   >
                 </div>
               </div>
@@ -159,14 +163,31 @@
         </div>
       </div>
     </div>
+    <SiteSeperatorComp class="cartview-siteseperator-styling">
+      <template #siteseperator-slot>
+        <div class="cartview-enjoy-your-drinks">
+          <img
+            class="cartview-img-styling"
+            src="@/assets/Pop-art-girl-drinks-cocktail-and-shows-sign-ok-on-transparent-background-PNG.png"
+            alt="pop art girl drinking cocktail"
+          />
+          <div class="cartview-cloud"></div>
+          <div class="cartview-text-wrapper">
+            <span class="cartview-text">Enjoy your Drinks!</span>
+          </div>
+        </div>
+      </template>
+    </SiteSeperatorComp>
   </section>
 </template>
 
 <script>
 import { useIngredientStore } from "@/stores/IngredientStore.js";
 import { useProductStore } from "@/stores/ProductStore";
+import SiteSeperatorComp from "@/components/SiteSeperatorComp.vue";
 
 export default {
+  components: { SiteSeperatorComp },
   setup() {
     const IngredientStore = useIngredientStore();
     const ProductStore = useProductStore();
@@ -185,19 +206,60 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.cartview-enjoy-your-drinks {
+  position: relative;
+}
+
+.cartview-siteseperator-styling {
+  margin-top: 5em;
+}
+
+.cartview-img-styling {
+  position: absolute;
+  width: 450px;
+  height: auto;
+  top: -146px;
+  left: 100px;
+}
+
+.cartview-text-wrapper {
+  width: max-content;
+  position: absolute;
+  right: 100px;
+  top: 20px;
+  rotate: 15deg;
+  padding: 2rem;
+  border-radius: 100px 50px 100px 150px;
+  background-color: var(--white-background-color);
+  outline: 5px solid var(--primary-color);
+}
+
+.cartview-cloud {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--white-background-color);
+  outline: 2px solid var(--primary-color);
+  border-radius: 100px 50px 100px 150px;
+  position: absolute;
+  left: 390px;
+}
+
+.cartview-text {
+  font-size: 5rem;
+  font-family: var(--secondary-font-family);
+  color: var(--primary-color);
+}
 
 .cart-header {
   text-align: center;
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
   font-size: 3rem;
 }
 .cart-section {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .cart-section-pos-divs {
@@ -218,7 +280,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  outline: 1px solid lightgray;
+  outline: 1px solid var(--third-background-color);
   padding: 0.5rem;
   margin: 1rem 0;
 }
@@ -228,7 +290,7 @@ export default {
   margin: 1rem 0;
   width: 350px;
   height: 350px;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -265,22 +327,22 @@ export default {
   width: 100%;
   height: 40px;
   background-color: rgb(26, 26, 81);
-  color: white;
+  color: var(--secondary-color);
 }
 
 .router-continue-shopping {
   width: 100%;
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid var(--primary-color);
   text-decoration: none;
-  color: black;
+  color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .section-title-ingredient {
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
   font-weight: 800;
 }
 
@@ -289,13 +351,13 @@ export default {
   justify-content: flex-start;
   align-items: center;
   margin-top: 0.2rem;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 .input-styling {
   width: 30px;
   margin-right: 0.5rem;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 .btn-delete {
@@ -304,7 +366,7 @@ export default {
   border: none;
   padding: 0.2rem;
   border-radius: 10px;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   margin-right: 0.5rem;
   cursor: pointer;
 }
@@ -315,7 +377,7 @@ export default {
   right: 0px;
   bottom: 0px;
   width: 450px;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -332,7 +394,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  outline: 1px solid lightgray;
+  outline: 1px solid var(--third-background-color);
   padding: 0.5rem;
   margin: 1rem 0;
 }
@@ -354,7 +416,7 @@ export default {
 .product-details-section {
   width: 90%;
   height: 100%;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 .product-details-details {
@@ -372,13 +434,13 @@ export default {
   right: 0px;
   bottom: 0px;
   width: 450px;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .product-details-title {
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
 }
 </style>

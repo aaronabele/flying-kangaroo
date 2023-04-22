@@ -1,7 +1,7 @@
 <template>
   <div class="filter-comp-wrapper">
     <div class="filter-comp-product-length">
-      <span> {{ ProductStore.filteredCocktailsLength }} products</span>
+      <span> {{ filteredCocktailsLength }} products</span>
     </div>
     <div class="filter-comp-filter-sorting">
       filter &nbsp; &nbsp;
@@ -33,7 +33,7 @@
     <router-link
       :to="{ name: 'details', params: { id: cocktail.idDrink } }"
       class="filter-comp-single-product-card"
-      v-for="cocktail in ProductStore.filteredCocktails"
+      v-for="cocktail in filteredCocktails"
       :key="cocktail.idDrink"
     >
       <img
@@ -82,6 +82,32 @@ export default {
   },
   components: {
     ThreeColsComp,
+  },
+  computed: {
+    filteredCocktails() {
+      let filteredCocktails = this.ProductStore.products;
+
+      if (this.ProductStore.listSorted !== "select") {
+        filteredCocktails.sort((a, b) => {
+          let aCocktail = a.strDrink.toLowerCase();
+          let bCocktail = b.strDrink.toLowerCase();
+          if (this.ProductStore.listSorted === "ascending") {
+            return aCocktail > bCocktail ? 1 : -1;
+          } else {
+            return aCocktail < bCocktail ? 1 : -1;
+          }
+        });
+      }
+      if (this.ProductStore.cselected !== "select") {
+        filteredCocktails = filteredCocktails.filter((item) => {
+          return item.strIngredient1 === this.ProductStore.cselected;
+        });
+      }
+      return filteredCocktails;
+    },
+    filteredCocktailsLength() {
+      return this.filteredCocktails.length;
+    },
   },
 };
 </script>
