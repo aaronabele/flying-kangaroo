@@ -228,7 +228,7 @@ export default {
   right: 100px;
   top: 20px;
   rotate: 15deg;
-  padding: 2rem;
+  padding: 1.2rem;
   border-radius: 100px 50px 100px 150px;
   background-color: var(--white-background-color);
   outline: 5px solid var(--primary-color);
