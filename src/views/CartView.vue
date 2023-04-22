@@ -28,7 +28,12 @@
                   <div class="cart-wrapper-styling">
                     {{ ingredient.quantity }}x &nbsp;
                     <div class="cart-price">
-                      {{ ingredient.ingredient.price }}
+                      {{
+                        new Intl.NumberFormat("de-DE", {
+                          style: "currency",
+                          currency: "EUR",
+                        }).format(ingredient.ingredient.price)
+                      }}
                     </div>
                     &nbsp;
                     <div
