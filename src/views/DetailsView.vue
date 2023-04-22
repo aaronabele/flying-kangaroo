@@ -127,15 +127,13 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .detail-view-wrapper {
-  width: 1200px;
+  width: var(--general-width);
   margin-top: 4rem;
   margin-bottom: 8rem;
   margin-left: auto;
   margin-right: auto;
-  outline: 1px solid lightgray;
+  outline: 1px solid var(--third-background-color);
   padding: 1rem;
 }
 
@@ -159,7 +157,7 @@ export default {
   height: 3rem;
   border: none;
   background-color: rgb(26, 26, 81);
-  color: white;
+  color: var(--secondary-color);
   margin: 1rem 0rem;
   cursor: pointer;
 }
@@ -181,28 +179,28 @@ export default {
   padding: 0.3rem;
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid lightgray;
+  border: 1px solid var(--third-background-color);
 }
 
 .detail-view-text {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   position: relative;
   height: 100%;
 }
 
 .detail-view-text-header {
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
 }
 
 .detail-view-siteseperator-wrapper {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--primary-font-family);
   font-size: 1.2rem;
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  height: 400px;
+  height: var(--banner-height);
 }
 
 .detail-view-siteseperator-template {
@@ -210,7 +208,7 @@ export default {
 }
 
 .detail-view-siteseperator-header {
-  font-family: "Kaushan Script", cursive;
+  font-family: var(--secondary-font-family);
   font-size: 2rem;
   letter-spacing: 0.2rem;
   text-shadow: 0 0 1px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px turquoise,
@@ -229,13 +227,13 @@ export default {
 
 .detail-view-router-link {
   text-decoration: none;
-  color: white;
+  color: var(--secondary-color);
   text-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px yellow,
     0 0 82px yellow, 0 0 92px yellow, 0 0 102px yellow, 0 0 151px yellow;
   font-size: 1.4rem;
   margin-top: 3rem;
   padding: 1.5rem;
-  border: 3px solid white;
+  border: 3px solid var(--secondary-color);
   border-radius: 15px;
 }
 
@@ -252,6 +250,6 @@ export default {
 }
 
 .btn-selected {
-  background-color: lightgray;
+  background-color: var(--third-background-color);
 }
 </style>

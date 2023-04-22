@@ -45,6 +45,7 @@ export const useIngredientStore = defineStore("ingredientStore", {
     isSendingCocktail() {
       this.sendCocktail(this.cocktail);
       this.sendPrice(this.cocktailPrice);
+      this.cocktail = [];
     },
     deleteItem(index) {
       this.completePrice.splice(index, 1);
@@ -79,24 +80,6 @@ export const useIngredientStore = defineStore("ingredientStore", {
     },
     selectedIngredients() {
       return this.cocktail.map((item) => item.ingredient.name).join(", ");
-    },
-    filteredIngredients() {
-      if (this.nonAlcoholic === true) {
-        const copy = {};
-
-        for (let key of Object.keys(this.ingredients)) {
-          const filtered = this.ingredients[key].filter(
-            (item) => item.category === "non-alcoholic"
-          );
-          if (filtered.length > 0) {
-            copy[key] = filtered;
-          }
-        }
-        return copy;
-      } else {
-        // return all ingredient
-        return this.ingredients;
-      }
     },
     calculateSubtotalIngredients() {
       let IngredientSum = 0;

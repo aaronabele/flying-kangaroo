@@ -37,10 +37,10 @@
       <h2 class="cocktail-mixer-alc-nonalc-header">
         2. Choose up to 5 Ingredients:
       </h2>
-      <div class="cocktail-mixer-ingridients-wrapper">
+      <form class="cocktail-mixer-ingridients-wrapper" ref="ingredientsForm">
         <section
           class="cocktail-mixer-alcoholic-ingridient-section"
-          v-for="(value, key) in IngredientStore.filteredIngredients"
+          v-for="(value, key) in filteredIngredients"
           :key="key"
         >
           <div class="item-header-styling">
@@ -55,14 +55,15 @@
                   placeholder="0"
                   @change="IngredientStore.inputQuantityPrice(item, $event)"
                   :id="item.id"
+                  data-cy="ingredient-quantity-input"
                 />
                 {{ item.price }} € per unit | <b>{{ item.name }}</b>
               </div>
             </div>
           </div>
         </section>
-      </div>
-      <div class="cocktailmixer-sum-area">
+      </form>
+      <div class="cocktailmixer-sum-area" data-cy="cocktailmixer-summary-area">
         <div class="sum-and-amount">
           <div class="quantity-area">
             <h3>Quantity:</h3>
@@ -90,7 +91,11 @@
             </span>
           </div>
         </div>
-        <button class="btn" @click="IngredientStore.isSendingCocktail()">
+        <button
+          class="btn"
+          data-cy="add-to-cart-btn"
+          @click="addCocktailToCart"
+        >
           Add to Cart
         </button>
       </div>
@@ -105,6 +110,32 @@ export default {
   setup() {
     const IngredientStore = useIngredientStore();
     return { IngredientStore };
+  },
+  methods: {
+    addCocktailToCart() {
+      this.IngredientStore.isSendingCocktail();
+      this.$refs.ingredientsForm.reset();
+    },
+  },
+  computed: {
+    filteredIngredients() {
+      if (this.IngredientStore.nonAlcoholic === true) {
+        const copy = {};
+
+        for (let key of Object.keys(this.IngredientStore.ingredients)) {
+          const filtered = this.IngredientStore.ingredients[key].filter(
+            (item) => item.category === "non-alcoholic"
+          );
+          if (filtered.length > 0) {
+            copy[key] = filtered;
+          }
+        }
+        return copy;
+      } else {
+        // return all ingredient
+        return this.IngredientStore.ingredients;
+      }
+    },
   },
 };
 </script>
@@ -162,8 +193,8 @@ export default {
   margin-bottom: 0;
   background-color: var(--ingredient-color);
   flex-grow: var(--units, 1);
-  z-index: 1;
   margin-right: 20rem;
+  overflow: hidden;
 }
 
 .cocktail-glass {
@@ -171,7 +202,7 @@ export default {
   height: auto;
   z-index: 2;
   position: absolute;
-  top: 180px;
+  top: 182px;
   right: 40px;
   margin-right: 10rem;
 }
@@ -181,13 +212,13 @@ export default {
   width: 600px;
   height: auto;
   position: absolute;
-  right: 250px;
+  right: 257px;
   top: 50px;
   rotate: 150deg;
 }
 
 .cocktail-icecubes {
-  z-index: 2;
+  z-index: 10;
   width: 400px;
   height: auto;
   position: absolute;

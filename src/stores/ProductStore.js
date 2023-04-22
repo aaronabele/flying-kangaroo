@@ -59,30 +59,6 @@ export const useProductStore = defineStore("productStore", {
     },
   },
   getters: {
-    filteredCocktails() {
-      let filteredCocktails = this.products;
-
-      if (this.listSorted !== "select") {
-        filteredCocktails.sort((a, b) => {
-          let aCocktail = a.strDrink.toLowerCase();
-          let bCocktail = b.strDrink.toLowerCase();
-          if (this.listSorted === "ascending") {
-            return aCocktail > bCocktail ? 1 : -1;
-          } else {
-            return aCocktail < bCocktail ? 1 : -1;
-          }
-        });
-      }
-      if (this.cselected !== "select") {
-        filteredCocktails = filteredCocktails.filter((item) => {
-          return item.strIngredient1 === this.cselected;
-        });
-      }
-      return filteredCocktails;
-    },
-    filteredCocktailsLength() {
-      return this.filteredCocktails.length;
-    },
     calculateSubtotalProducts() {
       let productSum = 0;
       this.productCocktail.forEach((product) => {
