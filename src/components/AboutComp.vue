@@ -74,7 +74,8 @@ export default {
 }
 
 .about-comp-image-cofounder {
-  height: var(--banner-height);
+  height: auto;
+  width: 500px;
   margin-left: 4rem;
 }
 

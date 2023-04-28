@@ -71,7 +71,9 @@
               >{{ IngredientStore.cocktail.length }} Ingredients</span
             >
             &nbsp;
-            <span> {{ IngredientStore.cocktailUnits }} Units</span>
+            <span class="cocktail-mixer-sum-amount">
+              {{ IngredientStore.cocktailUnits }} Units</span
+            >
           </div>
           <div class="ingredients-area">
             <h3>Selected:</h3>
