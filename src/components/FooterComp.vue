@@ -33,16 +33,16 @@
           <li class="footer-ul-li footer-ul-li-header">Follow us</li>
           <div class="footer-ul-li-follow-positioning">
             <li class="footer-ul-li">
-              <img src="@/assets/instagram.png" alt="" />
+              <img src="@/assets/instagram.png" alt="Instagram Logo" />
             </li>
             <li class="footer-ul-li">
-              <img src="@/assets/facebook.png" alt="" />
+              <img src="@/assets/facebook.png" alt="Facebook Logo" />
             </li>
             <li class="footer-ul-li">
-              <img src="@/assets/linkedin.png" alt="" />
+              <img src="@/assets/linkedin.png" alt="LinkedIn Logo" />
             </li>
             <li class="footer-ul-li">
-              <img src="@/assets/youtube.png" alt="" />
+              <img src="@/assets/youtube.png" alt="Youtube Logo" />
             </li>
           </div>
         </div>
@@ -53,42 +53,42 @@
               <img
                 class="footer-ul-li-img-styling"
                 src="@/assets/american-express.png"
-                alt=""
+                alt="Amex Logo"
               />
             </li>
             <li class="footer-ul-li">
               <img
                 class="footer-ul-li-img-styling"
                 src="@/assets/apple-pay.png"
-                alt=""
+                alt="Apple Pay Logo"
               />
             </li>
             <li class="footer-ul-li">
               <img
                 class="footer-ul-li-img-styling"
                 src="@/assets/google-pay.png"
-                alt=""
+                alt="Google Pay Logo"
               />
             </li>
             <li class="footer-ul-li">
               <img
                 class="footer-ul-li-img-styling"
                 src="@/assets/maestro.png"
-                alt=""
+                alt="Maestro Logo"
               />
             </li>
             <li class="footer-ul-li">
               <img
                 class="footer-ul-li-img-styling"
                 src="@/assets/paypal.png"
-                alt=""
+                alt="Paypal Logo"
               />
             </li>
             <li class="footer-ul-li">
               <img
                 class="footer-ul-li-img-styling"
                 src="@/assets/visa.png"
-                alt=""
+                alt="Visa Logo"
               />
             </li>
           </div>
