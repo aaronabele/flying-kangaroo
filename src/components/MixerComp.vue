@@ -22,7 +22,7 @@
     </div>
     <div class="cocktailmixer-mixer-second">
       <h2 class="cocktail-mixer-alc-nonalc-header">
-        1. Choose between Alcohol and Non-Alcohol:
+        1. Choose between Alcoholic and Non-Alcoholic:
       </h2>
       <div class="cocktail-mixer-alc-nonalc-wrapper">
         <section class="cocktail-mixer-alcoholic-nonalcoholic-section">
@@ -35,7 +35,7 @@
         </section>
       </div>
       <h2 class="cocktail-mixer-alc-nonalc-header">
-        2. Choose up to 5 Ingredients:
+        2. Choose up to 5 Ingredients (multiple units possible):
       </h2>
       <form class="cocktail-mixer-ingridients-wrapper" ref="ingredientsForm">
         <section

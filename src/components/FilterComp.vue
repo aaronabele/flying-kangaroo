@@ -14,16 +14,6 @@
       sort by name &nbsp; &nbsp;
       <select class="filter-comp-sorting" v-model="ProductStore.listSorted">
         &nbsp; &nbsp;
-        <img
-          class="filter-comp-arrow-image"
-          src="@/assets/pfeil.png"
-          alt="Pfeil icon"
-          :class="[
-            ProductStore.listSorted === true
-              ? 'filter-comp-arrow-image-rotate'
-              : 'filter-comp-arrow-image',
-          ]"
-        />
         <option selected value="ascending">Ascending order</option>
         <option value="descending">Descending order</option>
       </select>
